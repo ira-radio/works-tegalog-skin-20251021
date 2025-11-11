@@ -1,0 +1,29 @@
+// /* ----- カテゴリ選択チェックボックス群（★Ver 3.0.0以降で使用） ----- */
+// .catChecks {
+// 	font-size: 0.9em;
+// 	padding-top: 0.5em;
+// 	label {
+// 		display: inline-block;
+// 		cursor: pointer;
+// 		margin: 0 0.75em 0 0;
+
+// 		&:hover {
+// 			text-decoration: underline;
+// 		}
+// 	}
+// 	input {
+// 		min-width: 0;
+// 		min-height: 0;
+// 		margin-right: 0.2em;
+// 	}
+// }
+
+// /* 投稿欄下部：「鍵付き」チェックボックスと「個別鍵」ボタンの間を詰める一時的なスタイル */
+// .funcUIs {
+// 	.catChecks {
+// 		margin: 0 0.75em 0 0;
+// 		label {
+// 			margin: 0;
+// 		}
+// 	}
+// }

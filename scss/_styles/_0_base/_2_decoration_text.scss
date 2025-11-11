@@ -1,0 +1,60 @@
+// /* ----- 汎用装飾：文字 ----- */
+// /* B:太字(Bold) */
+// .decorationB {
+// 	font-weight: bold;
+// }
+
+// /* D:削除(Delete) */
+// .decorationD {
+// 	color: #888;
+// 	text-decoration-line: line-through;
+// 	text-decoration-color: darkblue;
+// }
+
+// /* E:強調(Emphasis) */
+// .decorationE {
+// 	font-style: normal;
+// 	font-weight: bold;
+// 	color: #05c;
+// }
+
+// /* I:斜体(Italic) */
+// .decorationI {
+// 	font-style: italic;
+// }
+
+// /* Q:引用(Quote) */
+// .decorationQ {
+// 	border-left: 5px double skyblue;
+// 	margin: 1em 0.3em 1em 1em;
+// 	padding: 0.75em 0.5em;
+// 	background-color: #f8f8ff;
+// 	font-size: 0.95em;
+// 	display: block; /* ※Ver 2.2.0以降必須の記述 */
+
+// 	&::before,
+// 	&::after {
+// 		content: ''; /* 標準で付加されてしまう引用符を無効にする */
+// 	}
+
+// 	& + br {
+// 		display: none; /* 引用直後の改行を無効化する */
+// 	}
+// }
+
+// /* S:小文字(Small) */
+// .decorationS {
+// 	font-size: var(--font-size-xs);
+// }
+
+// /* T:極小文字(Tiny) */
+// .decorationT {
+// 	font-size: 0.6em;
+// }
+
+// /* U:下線(Underline) */
+// .decorationU {
+// 	text-decoration-line: underline;
+// 	text-decoration-style: double;
+// 	text-decoration-color: skyblue;
+// }

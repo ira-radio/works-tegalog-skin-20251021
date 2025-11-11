@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+	--font-family-basic: 'Yu Gothic', Meiryo, 'Hiragino Kaku Gothic ProN', sans-serif;
+	--font-family-sitename: 'EB Garamond', 'Noto Serif JP', Yu Mincho, YuMincho, Hiragino Mincho Pro,
+		serif;
+	--font-family-heading: 'Noto Sans JP', var(--font-family-basic);
+	--font-family-icon: Material Symbols Sharp;
+
+	--font-size-xs: 1rem;
+	--font-size-sm: 1.3rem;
+	--font-size-basic: 1.6rem;
+
+	--line-height-basic: 2.65rem;
+
+	--rounded-basic: 2px;
+	--rounded-pill: 999px;
+
+	--animation: 0.3s;
+
+	--main-color-1: #fff;
+	--main-color-2: #dddddd;
+	--main-color-3: #c9c9c9;
+	--main-color-4: #8b8b8b;
+	--main-color-5: #3f3f3f;
+	--main-color-6: #000;
+
+	--btn-bg-color: var(--main-color-6);
+	--btn-text-color: var(--main-color-1);
+}

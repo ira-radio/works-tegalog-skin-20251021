@@ -1,0 +1,58 @@
+// /* ----- 新着投稿リスト区画 ----- */
+// .latestpostarea {
+// 	margin: 0 0 1em 0;
+// 	padding: 1em;
+// 	background-color: white;
+
+// 	/* 見出し */
+// 	.cornertitle {
+// 		margin: 0;
+// 		font-weight: bold;
+// 		color: #008;
+// 		text-shadow: 1px 1px 1px #eee;
+// 	}
+// }
+
+// /* 新着投稿グリスト */
+// .latestpostlist {
+// 	margin: 0;
+// 	padding: 0 0.5em 0.3em 1.2em;
+// 	line-height: 1.25;
+
+// 	/* 各項目 */
+// 	li {
+// 		margin: 0.75em 0;
+// 	}
+
+// 	/* タイトルリンク以外の項目 */
+// 	span {
+// 		display: inline-block;
+// 		font-size: var(--font-size-xs);
+// 	}
+
+// 	/* 投稿日付 */
+// 	.postdate {
+// 		color: gray;
+// 	}
+// 	/* 投稿時刻 */
+// 	.posttime {
+// 		color: gray;
+// 	}
+// 	/* 投稿者名 */
+// 	.username {
+// 		color: #558855;
+// 		font-weight: normal;
+// 	}
+// 	/* 投稿者ID */
+// 	.userid {
+// 		color: #555588;
+// 	}
+// 	/* 投稿番号 */
+// 	.postid {
+// 		color: gray;
+// 	}
+// 	/* 本文文字数 */
+// 	.length {
+// 		color: gray;
+// 	}
+// }

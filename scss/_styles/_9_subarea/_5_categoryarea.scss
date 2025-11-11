@@ -1,0 +1,54 @@
+// /* ----- カテゴリツリー区画 ----- */
+// .categoryarea {
+// 	margin: 0 0 1em 0; /* 外側の余白量 */
+// 	padding: 1em; /* 内側の余白量 */
+// 	background-color: white; /* 背景色 */
+
+// 	/* 見出し */
+// 	.cornertitle {
+// 		font-weight: bold;
+// 		color: black;
+// 		text-shadow: 1px 1px 1px #eee;
+// 		margin: 0 0 0.5em 0;
+// 		border-bottom: 1px dashed #aaa;
+// 	}
+// }
+// .categoryTree {
+// 	/* カテゴリツリー */
+// 	ul {
+// 		padding-left: 30px;
+// 		list-style-type: disc;
+// 	}
+// 	/* カテゴリツリー内の該当件数 */
+// 	.num {
+// 		display: inline-block;
+// 		margin-left: 0.4em;
+// 		font-size: 0.9em;
+// 		color: #aaa;
+// 	}
+
+// 	/* カテゴリアイコン */
+// 	.caticon {
+// 		img {
+// 			height: 1.2em; /* アイコンの高さを1.2文字分に制限する */
+// 			width: auto; /* アイコンの横幅は自動調整する */
+// 			vertical-align: text-top; /* アイコンの上端位置をテキストの上端に合わせる */
+// 		}
+// 	}
+
+// 	/* カテゴリ名 */
+// 	.cattext {
+// 	}
+
+// 	/* 間隔調整：カテゴリアイコンとカテゴリ名が並ぶ際には間隔を空ける */
+// 	.caticon + .cattext,
+// 	.cattext + .caticon {
+// 		margin-left: 3px;
+// 	}
+
+// 	/* カテゴリ概要文 */
+// 	.catdescription {
+// 		;font-size:  var(--font-size-xs);er;
+// 		color: #555;
+// 	}
+// }

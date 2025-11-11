@@ -1,0 +1,24 @@
+body {
+	font: 500 var(--font-size-basic) / var(--line-height-basic) var(--font-family-basic);
+
+	& > * {
+		padding: 0 0.6em;
+	}
+}
+
+/* ----- リンクの装飾 ----- */
+a {
+	text-decoration: none;
+
+	&:hover {
+	}
+}
+
+/* ----- URLが書かれた場合の装飾 ----- */
+.url {
+	word-break: break-all; /* 自動リンクのはみ出しを防ぐ */
+}
+
+/* ----- カード型リンクの装飾 ----- */
+.cardlink {
+}

@@ -1,0 +1,57 @@
+// /* ----- 検索窓区画 ----- */
+// .searcharea {
+// 	margin: 0 0 1em 0;
+// 	padding: 1em;
+// 	background-color: white;
+// 	overflow: auto;
+
+// 	/* 見出し */
+// 	.cornertitle {
+// 		font-weight: bold;
+// 		margin: 0;
+// 		color: black;
+// 		text-shadow: 1px 1px 1px #eee;
+// 	}
+// }
+
+// /* 検索フォーム */
+// .searchbox {
+// 	margin: 0;
+// }
+
+// /* 検索対象を限定するチェックボックス */
+// .searchtarget {
+// 	margin: 0;
+// 	font-size: 0.9em;
+// 	line-height: 1.3;
+// }
+
+// /* 検索フォーム形式の切り替えリンク */
+// .siwtchsearchbox {
+// 	font-size: var(--font-size-xs);
+// 	margin-bottom: 0;
+// }
+
+// /* 複合検索フォーム */
+// #complexsearch {
+// 	display: none; /* 複合検索窓は、最初は非表示にしておく */
+// }
+
+// /* 検索オプションリスト */
+// .searchoptions {
+// 	font-size: 0.9em;
+// 	margin: 0.75em 0 1em 0.5em;
+// 	padding: 0 0 0 0.5em;
+
+// 	/* セレクトボックス */
+// 	select {
+// 		max-width: 175px;
+// 		overflow: hidden;
+// 	}
+// }
+
+// /* 項目名 */
+// .solabel {
+// 	display: inline-block;
+// 	min-width: 5em;
+// }

@@ -1,0 +1,177 @@
+// .onelogbox {
+// 	margin: 0;
+// 	padding: 1em 0;
+// 	border-bottom: 1px #e6ecf0 solid;
+// 	display: table;
+// 	width: 100%;
+// 	box-sizing: border-box;
+// }
+
+// /* 限定条件表示行の直下に表示される場合 */
+// .situation + .onelogbox {
+// 	border-top: 1px #e6ecf0 solid;
+// }
+
+// /* ----- ユーザアイコン表示 ----- */
+// .iconarea {
+// 	display: table-cell;
+// 	vertical-align: top;
+// 	padding-top: 3px;
+// 	padding-right: 6px;
+// }
+// .usericon {
+// 	vertical-align: middle;
+// }
+
+// /* ----- 投稿内容側 ----- */
+// .onelogbody {
+// 	display: table-cell;
+// 	vertical-align: top;
+// 	width: 100%;
+// }
+
+// /* ----- 投稿情報表示 ----- */
+// .oneloginfo {
+// 	margin: 0 0 0.3em 0;
+// 	font-size: 0.9em;
+// }
+
+// .onelogctrl {
+// 	margin: 0;
+// 	float: right;
+// }
+
+// /* ----- ユーザ名領域 ----- */
+// .username {
+// 	display: inline-block;
+// 	margin: 0 0.5em 0 0;
+// 	font-weight: bold;
+
+// 	/* ユーザ名のリンク */
+// 	a {
+// 		color: black;
+
+// 		&:hover {
+// 			color: #0a71ae;
+// 		}
+// 	}
+// }
+
+// /* ----- 投稿日時領域 ----- */
+// .postdate {
+// 	font-size: 0.85em;
+
+// 	/* 投稿日時のリンク */
+// 	a {
+// 		display: inline-block;
+// 		color: #555;
+// 		background-color: white;
+// 		border-radius: 0.5em;
+// 		padding: 0 0.5em;
+// 		&:hover {
+// 			color: #0a71ae;
+// 		}
+// 	}
+// }
+
+// /* ----- New!サイン部分 ----- */
+// .newsign {
+// 	display: inline-block;
+// 	color: #f55;
+// 	font-size: var(--font-size-xs);
+// 	margin-right: 0.35em;
+
+// 	&:empty {
+// 		display: none;
+// 	}
+// }
+
+// /* ----- カテゴリ名 ----- */
+// .categories {
+// 	font-size: 0.9em;
+// 	margin-right: 0.25em;
+// }
+
+// /* カテゴリリンク1つ */
+// .categorylink {
+// 	display: inline-block;
+// 	text-decoration: none;
+// }
+
+// /* カテゴリ間のセパレータ */
+// .catseparator {
+// 	display: inline-block;
+// 	margin: 0 1px;
+// 	color: gray;
+// }
+
+// /* カテゴリアイコン */
+// .categoryicon img {
+// 	height: 1.2em;
+// 	width: auto;
+// 	vertical-align: text-top;
+// 	margin: 0 1px;
+// }
+
+// /* ----- 投稿No. ----- */
+// .postnum {
+// 	font-size: 0.75em;
+// 	color: #555;
+// }
+
+// /* ----- 文字数 ----- */
+// .length {
+// 	font-size: var(--font-size-xs);
+// 	color: #555;
+// }
+
+// /* ----- 編集ボタン ----- */
+// .editlink {
+// 	font-size: 0.67em;
+// 	a {
+// 		text-decoration: none;
+// 		display: inline-block;
+// 		color: #08f;
+// 		background-color: #eef;
+// 		border: 1px solid #ccf;
+// 		border-radius: 5px;
+// 		padding: 0 3px;
+
+// 		&:hover {
+// 			background-color: blue;
+// 			color: white;
+// 			border-color: blue;
+// 		}
+// 	}
+// }
+
+// /* ----- 投稿本文 ----- */
+// .onelogcontent {
+// 	margin: 0;
+// }
+// .comment {
+// 	line-height: 1.3;
+
+// 	/* 投稿本文に含まれるURLリンク */
+// 	.url {
+// 		color: #85973e;
+// 		text-decoration: none;
+
+// 		&:hover {
+// 			text-decoration: underline;
+// 		}
+// 	}
+// }
+
+// /* 投稿本文に含まれるハッシュタグリンク */
+// .onelogbody {
+// 	.taglink {
+// 		display: inline-block;
+// 		color: #85973e;
+// 		text-decoration: none;
+// 		word-break: break-all;
+// 		&:hover {
+// 			text-decoration: underline;
+// 		}
+// 	}
+// }

@@ -1,0 +1,71 @@
+// /* ----- 日付別リスト区画 ----- */
+// .datelistarea {
+// 	margin: 0 0 1em 0; /* 外側の余白量 */
+// 	padding: 1em; /* 内側の余白量 */
+// 	background-color: white; /* 背景色 */
+
+// 	/* 見出し */
+// 	.cornertitle {
+// 		font-weight: bold;
+// 		color: black;
+// 		text-shadow: 1px 1px 1px #eee;
+// 		margin: 0 0 0.5em 0;
+// 		border-bottom: 1px dashed #aaa;
+// 	}
+// }
+
+// /* 日付リスト(年単位) */
+// .datelimitlist {
+// 	margin: 0.5em 0;
+// 	padding: 0 0 0 20px;
+
+// 	/* 日付リスト(月単位) */
+// 	.datelimitsublist {
+// 		margin: 0;
+// 		padding: 0 0 0 10px;
+// 		list-style-type: none;
+// 		font-size: 0.95em;
+// 		/* 年表記が単独で存在する場合に、月表示を横に並べる */
+// 		.datelimit-month {
+// 			display: inline-block;
+// 			margin-right: 0.9em;
+// 		}
+// 		/* 年表記が単独で存在する場合に、月リンク内に含まれる年表記を非表示にする */
+// 		// 詳細解説→ https://www.nishishi.com/cgi/tegalog/custom/#customizecss-datelist
+// 		.year {
+// 			display: none;
+// 		}
+// 	}
+
+// 	/* 日付リスト内の該当件数 */
+// 	.num {
+// 		font-size: 0.85em;
+// 		color: #66a;
+// 		margin-left: 0.3em;
+// 	}
+// }
+
+// /* 日付リンク項目 */
+// .datelistlink {
+// 	&:hover {
+// 		color: white;
+// 		background-color: green;
+// 		border-radius: 3px;
+// 	}
+// }
+
+// /* 日付プルダウンメニュー区画 */
+// .datelimitbox {
+// 	margin: 0.5em;
+// }
+
+// /* 昇順/降順選択ラジオボタン区画 */
+// .datelimitboxoptions {
+// 	display: block;
+// 	font-size: 0.9em;
+
+// 	label {
+// 		display: inline-block;
+// 		margin-right: 0.5em;
+// 	}
+// }

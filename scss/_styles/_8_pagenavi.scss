@@ -1,0 +1,60 @@
+// .pagenavi {
+// 	margin: 2.5em 0px;
+// 	padding: 0.5em 0px;
+// 	text-align: center;
+// 	border-width: 3px 0px;
+// 	border-style: solid;
+// 	border-color: #ccd6dd;
+// 	background-color: #f5f8fa;
+
+// 	p {
+// 		margin: 0;
+// 		text-align: center;
+// 	}
+// }
+
+// /* ----- ページ前後移動リンク ----- */
+// .pagelinks {
+// 	margin: 0.75em;
+
+// 	a {
+// 		font-weight: bold;
+// 	}
+// }
+
+// /* ----- ページ番号リンク ----- */
+// p.pagenums {
+// 	margin: 0.5em;
+// }
+
+// /* ページ番号リンクの数字 */
+// .pagenums {
+// 	a {
+// 		.pagenumlink {
+// 			margin: 0px 2px 0px 2px;
+// 			padding: 0.2em 0.5em;
+// 			font-size: 1em;
+// 			font-weight: bold;
+
+// 			&:hover {
+// 				text-decoration: none;
+// 				background-color: #08f;
+// 				color: white;
+// 				border-radius: 0.3em;
+// 			}
+// 		}
+// 	}
+// }
+
+// /* 現在のページ番号の装飾 */
+// a.pagenumhere {
+// 	text-decoration: none;
+// 	background-color: #5bf;
+// 	color: white;
+// 	border-radius: 1em;
+// }
+
+// /* ----- 限定解除リンク（＝HOMEに戻るリンク） ----- */
+// .pagehome {
+// 	font-weight: bold;
+// }

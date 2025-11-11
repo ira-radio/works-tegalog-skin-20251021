@@ -1,0 +1,345 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+:root {
+  --font-family-basic: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-family-sitename: "EB Garamond", "Noto Serif JP", Yu Mincho, YuMincho, Hiragino Mincho Pro,
+  	serif;
+  --font-family-heading: "Noto Sans JP", var(--font-family-basic);
+  --font-family-icon: Material Symbols Sharp;
+  --font-size-xs: 1rem;
+  --font-size-sm: 1.3rem;
+  --font-size-basic: 1.6rem;
+  --line-height-basic: 2.65rem;
+  --rounded-basic: 2px;
+  --rounded-pill: 999px;
+  --animation: 0.3s;
+  --main-color-1: #fff;
+  --main-color-2: #dddddd;
+  --main-color-3: #c9c9c9;
+  --main-color-4: #8b8b8b;
+  --main-color-5: #3f3f3f;
+  --main-color-6: #000;
+  --btn-bg-color: var(--main-color-6);
+  --btn-text-color: var(--main-color-1);
+}
+
+/* ===== ▼ リセット　ここから（基本的には触らない方が良い部分） ▼ ===== */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+  Add by espace
+*/
+* {
+  word-break: normal;
+}
+
+:focus {
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  word-wrap: break-word;
+}
+
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  margin-block: 0;
+  margin-inline: auto;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  max-inline-size: 100%;
+}
+
+p,
+dl,
+ul,
+ol,
+form,
+blockquote {
+  margin-block: 1em;
+  margin-inline: auto;
+}
+
+main {
+  hanging-punctuation: allow-end;
+}
+
+/* ===== ▲ リセット　ここまで（基本的には触らない方が良い部分） ▲ ===== */
+/* =============== */
+/*   全体共通装飾   */
+/* =============== */
+body {
+  font: 500 var(--font-size-basic)/var(--line-height-basic) var(--font-family-basic);
+}
+body > * {
+  padding: 0 0.6em;
+}
+
+/* ----- リンクの装飾 ----- */
+a {
+  text-decoration: none;
+}
+/* ----- URLが書かれた場合の装飾 ----- */
+.url {
+  word-break: break-all; /* 自動リンクのはみ出しを防ぐ */
+}
+
+/* ----- カード型リンクの装飾 ----- */
+/* 画像リンク */
+.imagelink {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: inherit;
+}
+
+.embeddedimage {
+  max-width: 100%;
+  max-height: 240px;
+  width: auto;
+  height: auto;
+}
+
+/* フラグ付き画像 */
+figure.nsfw,
+.imagelink.nsfw {
+  overflow: hidden;
+}
+
+img.nsfw {
+  filter: blur(9px);
+}
+
+/* ============= */
+/*   ヘッダ領域   */
+/* ============= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-block: 0.6em;
+}
+
+/* ----- ▼タイトル区画 ----- */
+.headtitle .maintitle {
+  font: 500 3.6rem/1 var(--font-family-sitename);
+}
+.headtitle .maintitle a {
+  color: var(----main-color-6);
+}
+.headtitle .subtitle {
+  font-size: var(--font-size-basic);
+}
+.headtitle .mainguide {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* ----- 管理・投稿ボタン区画 ----- */
+.headcontrol {
+  /* 管理・投稿用リンクボタン */
+}
+.headcontrol .control-links {
+  display: flex;
+  justify-content: end;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.headcontrol .control-links li {
+  list-style: none;
+}
+.headcontrol .control-links a {
+  overflow: hidden;
+  padding-block: 0.4rem;
+  padding-inline: 0.8rem;
+  border: 2px solid var(--main-color-2);
+  border-radius: var(--rounded-basic);
+  color: var(--main-color-6);
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  transition: border-color var(--animation);
+}
+.headcontrol .control-links a:hover {
+  border-color: var(--main-color-6);
+}
+
+/* ======================== */
+/*   入力フォームの表示領域   */
+/* ======================== */
+/* ----- 本文入力欄 ----- */
+.postarea .line-textarea {
+  margin: 0;
+  margin-block: 0;
+}
+.postarea .line-textarea textarea {
+  width: 100%;
+  border: 1px solid var(--main-color-2);
+  border-radius: var(--rounded-basic);
+  transition: border-color var(--animation);
+}
+.postarea .line-textarea textarea:hover, .postarea .line-textarea textarea:focus {
+  border-color: var(--main-color-3);
+}
+.postarea .line-control {
+  line-height: 3.4em;
+  /* ----- 投稿ボタン・文字装飾ボタン群 ----- */
+}
+.postarea .line-control .postbutton,
+.postarea .line-control [type=button],
+.postarea .line-control [type=file]::file-selector-button {
+  cursor: pointer;
+  display: inline-block;
+}
+.postarea .line-control .postbutton,
+.postarea .line-control [type=button] {
+  padding-block: 0.4rem;
+  padding-inline: 0.4rem;
+  line-height: 1;
+}
+.postarea .line-control .postbutton {
+  padding-inline: 2rem;
+  background: var(--main-color-6);
+  border: 0;
+  border-radius: var(--rounded-pill);
+  color: var(--main-color-1);
+  line-height: var(--line-height-basic);
+}
+.postarea .line-control [id*=postcount] {
+  font-size: var(--font-size-xs);
+}
+.postarea .line-control [class*=Btns] [id*=Door] [type=button], .postarea .line-control [class*=Btns] > [type=button] {
+  padding-inline: 1rem;
+  background: var(--main-color-2);
+  border: 0;
+  border-radius: var(--rounded-pill);
+  color: var(--main-color-6);
+  line-height: var(--line-height-basic);
+}
+.postarea .line-control [class*=Btns] [id*=Set],
+.postarea .line-control [class*=Btns] [id*=imageBtns] {
+  padding: 14px 6px;
+  border: 1px solid var(--main-color-2);
+  border-inline-start-width: 4px;
+  border-radius: var(--rounded-basic);
+  line-height: 1;
+  vertical-align: middle;
+}
+.postarea .line-control [class*=Btns] [id*=Set] [type=button],
+.postarea .line-control [class*=Btns] [id*=Set] [type=file]::file-selector-button,
+.postarea .line-control [class*=Btns] [id*=imageBtns] [type=button],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [type=file]::file-selector-button {
+  border: 2px solid var(--main-color-2);
+  border-radius: var(--rounded-basic);
+}
+.postarea .line-control [class*=Btns] [id*=Set] [type=button] + [type=button],
+.postarea .line-control [class*=Btns] [id*=Set] [type=file]::file-selector-button + [type=button],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [type=button] + [type=button],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [type=file]::file-selector-button + [type=button] {
+  margin-inline-start: 2px;
+}
+.postarea .line-control [class*=Btns] [id*=Set] [class*=Checks] + [class*=Checks], .postarea .line-control [class*=Btns] [id*=Set] [class*=Checks] + [type=button],
+.postarea .line-control [class*=Btns] [id*=Set] [type=button] + [class*=Checks],
+.postarea .line-control [class*=Btns] [id*=Set] [type=button] + [type=button],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [class*=Checks] + [class*=Checks],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [class*=Checks] + [type=button],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [type=button] + [class*=Checks],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [type=button] + [type=button] {
+  margin-inline-start: 0.6em;
+}
+.postarea .line-control [class*=Btns] [id*=Set] [type=button] + [type=button],
+.postarea .line-control [class*=Btns] [id*=imageBtns] [type=button] + [type=button] {
+  margin-inline-start: 2px;
+}
+.postarea .line-control [class*=Btns] [id*=Set] [class*=Checks] label + label,
+.postarea .line-control [class*=Btns] [id*=imageBtns] [class*=Checks] label + label {
+  margin-inline-start: 0.6em;
+}
+
+/* =============================================== */
+/*   段組構成（画面の幅が800px以上ある広い場合限定）   */
+/* =============================================== */
+/* ======================== */
+/*   メイン（ログ掲載）領域   */
+/* ======================== */
+/* ================================= */
+/*   投稿ボックス（一発言）ごとの表示   */
+/* ================================= */
+/* ========================================================= */
+/*   鍵付き(パスワード保護)投稿に表示される鍵入力フォームの装飾   */
+/* ========================================================= */
+/* ================================================================== */
+/*   一発言だけが表示される際に追加表示されるユーティリティリンク群の装飾   */
+/* ================================================================== */
+/* =========================== */
+/*   ■ページナビゲーション領域   */
+/* =========================== */
+/* =========== */
+/*   サブ領域   */
+/* =========== */
+/* ============= */
+/*   フッタ領域   */
+/* ============= */
+/* Powered-by表記のデザイン */
+.poweredby {
+  margin: 0 1em;
+  font-size: var(--font-size-xs);
+}

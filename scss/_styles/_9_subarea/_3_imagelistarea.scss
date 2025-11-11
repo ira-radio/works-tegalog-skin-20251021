@@ -1,0 +1,52 @@
+// /* ----- 画像一覧リスト区画 ----- */
+// .imagelistarea {
+// 	margin: 0 0 1em 0;
+// 	padding: 1em;
+// 	background-color: white;
+
+// 	/* 見出し */
+// 	.cornertitle {
+// 		margin: 0;
+// 		font-weight: bold;
+// 		color: #008;
+// 		text-shadow: 1px 1px 1px #eee;
+// 	}
+// }
+
+// /* ----- 新着画像リスト内の各画像の装飾 ----- */
+// // ここで画像の縦横サイズを制限しておかないと、原寸で表示されてしまいますので注意して下さい！
+// .imagelistbox {
+// 	margin: 0;
+// 	text-align: center;
+
+// 	/* 画像リストの1項目内の画像そのもの */
+// 	.oneimage {
+// 		width: 100%;
+// 		height: auto;
+// 		aspect-ratio: 1/1;
+// 		object-fit: cover;
+// 		vertical-align: middle;
+// 	}
+// }
+// /* 画像リストの1項目枠 */
+// .imagelistitem {
+// 	display: inline-block;
+// 	width: 30%;
+// 	max-width: 100px;
+// 	max-height: 100px;
+// 	margin: 1%;
+// 	vertical-align: middle;
+// 	overflow: hidden;
+// }
+
+// /* 総数・総サイズの情報 */
+// .imagesinfo {
+// 	margin: 0.25em 0;
+// 	text-align: right;
+// }
+// .totalimgfiles {
+// 	font-size: 0.9em;
+// }
+// .totalimgsizes {
+// 	font-size: var(--font-size-xs);
+// }

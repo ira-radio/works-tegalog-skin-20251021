@@ -1,0 +1,72 @@
+// /* ----- 文字装飾ボタン群 ----- */
+// /* 掲載領域全体 */
+// .decoBtns {
+// 	display: inline-block;
+// 	margin-top: 0.5em;
+// }
+// /* 全ボタン装飾 */
+// .decoBtns input {
+// 	min-width: 32px;
+// 	min-height: 28px;
+// 	margin: 1px;
+// 	background-color: #eee;
+// 	border: 1px solid #aaa;
+// 	cursor: pointer;
+// 	border-radius: 3px;
+// 	font-size: 14px;
+// 	vertical-align: middle;
+// }
+// /* マウス載る際 */
+// .decoBtns input:hover {
+// 	background-color: #e5f1fb;
+// 	border-color: #0078d7;
+// }
+// /* 太字  :B */
+// .decoBtnB {
+// 	font-weight: bold;
+// }
+// /* 取消線:D */
+// .decoBtnD {
+// 	text-decoration: line-through;
+// 	text-decoration-color: red;
+// 	text-decoration-style: double;
+// }
+// /* 強調  :E */
+// .decoBtnE {
+// 	font-weight: bold;
+// 	color: blue;
+// }
+// /* 斜体  :I */
+// .decoBtnI {
+// 	font-style: italic;
+// }
+// /* 引用  :Q */
+// .decoBtnQ {
+// }
+// /* 小さめ:S */
+// .decoBtnS {
+// }
+// /* 極小  :T */
+// .decoBtnT {
+// 	font-size: 11px !important;
+// }
+// /* 下線  :U */
+// .decoBtnU {
+// 	text-decoration: underline;
+// 	text-decoration-color: red;
+// }
+// /* 文字色:C */
+// .decoBtnC {
+// 	color: red;
+// }
+// /* 背景色:M */
+// .decoBtnM {
+// 	color: blue;
+// }
+
+// @media all and (min-width: 800px) {
+// 	/* 文字装飾ボタン群 */
+// 	.decoBtns {
+// 		margin-top: 0;
+// 	}
+// }

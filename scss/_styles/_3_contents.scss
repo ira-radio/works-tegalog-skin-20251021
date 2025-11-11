@@ -1,0 +1,29 @@
+// @media all and (min-width: 800px) {
+// 	/* ----- 大外枠の装飾 ----- */
+// 	.contents {
+// 		display: flex;
+// 		flex-direction: row-reverse;
+// 		// サイドバー(サブ側)を右側にしたい場合はこの値を「row」に、
+// 		// 左側にしたい場合は「row-reverse」にして下さい。
+// 		border-collapse: separate;
+// 		border-spacing: 1em 0;
+// 		margin: 0;
+// 		padding: 0;
+// 		width: 100%;
+
+// 		/* ----- メイン段の装飾 ----- */
+// 		.mainarea {
+// 			width: 75%; /* メイン側の横幅 */
+// 			vertical-align: top;
+// 			margin: 1em 1em 0 0;
+// 			// サイドバー(サブ側)を右側に変更した場合は、
+// 			// この値を「1em 0 0 1em」などに変更する方がバランスが良くなります。
+// 		}
+
+// 		/* ----- サブ段の装飾 ----- */
+// 		.subarea {
+// 			width: 25%; /* サブ側の横幅 */
+// 			vertical-align: top;
+// 		}
+// 	}
+// }

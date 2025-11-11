@@ -1,0 +1,66 @@
+// /* ----- 続きを読むリンク（ボタン） ----- */
+// /* ボタン枠の装飾(共通) */
+// .readmorebutton {
+// 	display: inline-block;
+// 	padding: 1px 0.5em;
+// 	margin: 0 1px;
+// 	border: 1px solid #ccd;
+// 	border-radius: 0.5em;
+
+// 	/* ボタン表面の装飾(共通) */
+// 	&:link,
+// 	&:visited {
+// 		background-color: #eee;
+// 		background-image: linear-gradient(0deg, #ccc, #ddd 55%, white);
+// 		color: darkblue;
+// 		text-decoration: none;
+// 	}
+// 	/* ボタンにマウスが載った際の装飾(共通) */
+// 	&:hover {
+// 		background-image: none;
+// 		background-color: #5be;
+// 		color: white;
+// 		text-decoration: underline;
+// 	}
+
+// 	/* 開く（続きを読む）ボタン専用の装飾 */
+// 	&.readmoreopen {
+// 		font-size: 0.95em;
+// 	}
+
+// 	/* 閉じる（畳む）ボタン専用の装飾 */
+// 	&.readmoreclose {
+// 		font-size: 0.75em;
+// 	}
+// }
+
+// /* ----- 折り畳み空間 ----- */
+// /* ボタンカバー */
+// .foldswitch {
+// 	width: fit-content;
+// }
+// /* ボタン */
+// .foldlabel {
+// 	display: inline-block;
+// 	padding: 0.25rem 0.5rem;
+// 	border: 1px solid #bcc;
+// 	border-radius: 5px;
+// 	background-color: #def;
+// 	background-image: linear-gradient(0deg, #cde, #def 55%, white);
+// 	color: darkblue;
+// 	line-height: 1;
+// 	cursor: pointer;
+
+// 	&:hover {
+// 		background-image: none;
+// 		background-color: #3bf;
+// 		color: white;
+// 	}
+// }
+
+// /* 折り畳まれている空間 */
+// .foldedarea {
+// 	border-left: 3px solid skyblue;
+// 	margin: 0.25rem 0 0 0.125rem;
+// 	padding: 0.25rem 0.5rem;
+// }

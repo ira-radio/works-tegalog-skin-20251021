@@ -1,0 +1,43 @@
+// /* ----- 汎用装飾：画像 ----- */
+
+// /* B:太字(Bold)に含まれる画像に対する装飾 */
+// .decorationB img {
+// 	box-shadow: 5px 5px 5px royalblue;
+// }
+
+// /* D:削除(Delete)に含まれる画像に対する装飾 */
+// .decorationD img {
+// 	opacity: 0.5;
+// }
+
+// /* E:強調(Emphasis)に含まれる画像に対する装飾 */
+// .decorationE img {
+// 	outline: 8px ridge rgba(50, 220, 170, 0.6);
+// }
+
+// /* I:斜体(Italic)に含まれる画像に対する装飾 */
+// .decorationI img {
+// 	box-shadow: -5px 5px 5px yellowgreen;
+// }
+
+// /* Q:引用(Quote)に含まれる画像に対する装飾 */
+// .decorationQ img {
+// 	vertical-align: middle;
+// }
+
+// /* S:小文字(Small)に含まれる画像に対する装飾 */
+// .decorationS img {
+// 	vertical-align: middle;
+// }
+
+// /* T:極小文字(Tiny)に含まれる画像に対する装飾 */
+// .decorationT img {
+// 	max-height: 75px;
+// 	width: auto;
+// 	vertical-align: middle;
+// }
+
+// /* U:下線(Underline)に含まれる画像に対する装飾 */
+// .decorationU img {
+// 	box-shadow: 5px 5px 5px skyblue;
+// }

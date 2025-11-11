@@ -1,0 +1,81 @@
+// /* ----- カレンダー区画 ----- */
+// .calendararea {
+// 	margin: 0 0 1em 0;
+// 	padding: 1em;
+// 	background-color: white;
+
+// 	/* 見出し */
+// 	.cornertitle {
+// 		margin: 0;
+// 		font-weight: bold;
+// 		color: #005;
+// 		text-shadow: 1px 1px 1px #eee;
+// 	}
+// }
+
+// /* カレンダーカバー */
+// .calendarplace {
+// 	margin: 1em 0;
+// 	padding: 0;
+// 	background-color: #fff;
+// 	line-height: 1.5;
+// 	overflow: auto;
+// }
+
+// /* カレンダーテーブル */
+// .calendar {
+// 	border-collapse: collapse;
+// 	border: 1px solid #bfe2ff;
+
+// 	th,
+// 	td {
+// 		border: 1px solid #bfe2ff;
+// 		padding: 2px;
+// 		text-align: center;
+// 		font-size: 0.9em;
+// 		line-height: 1;
+// 	}
+
+// 	/* 年月キャプション */
+// 	caption {
+// 		color: royalblue;
+// 	}
+
+// 	/* 日付数値の装飾（リンクになる場合も、ならない場合も共通） */
+// 	a,
+// 	.nolink {
+// 		display: inline-block;
+// 		border-radius: 50%;
+// 		padding: 0.4em;
+// 		width: 1.2em;
+// 		height: 1.1em;
+// 		background-color: transparent;
+// 	}
+
+// 	/* 日付数値のリンク（※リンクになる場合だけの装飾） */
+// 	td {
+// 		a {
+// 			text-decoration: none;
+// 			background-color: #bfe2ff;
+// 			color: black;
+// 			&:hover {
+// 				background-color: #0088ff;
+// 				color: white;
+// 			}
+// 		}
+// 	}
+// }
+
+// /* 曜日行 */
+// .daysofweek th {
+// 	background-color: #e8f4ff;
+// 	font-weight: normal;
+// 	padding: 6px 0;
+// 	font-size: var(--font-size-xs);
+// 	line-height: 1;
+// }
+
+// /* 今日の枠（カレンダー内での「今日」のセルだけの装飾） */
+// .today {
+// 	background-color: #ffffcc;
+// }

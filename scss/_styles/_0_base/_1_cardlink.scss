@@ -1,0 +1,98 @@
+// /* ----- リンクカードの装飾（サイズ共通部分） ----- */
+// /* カード外枠 */
+// .cardlinkbox {
+// 	&:hover {
+// 	}
+// }
+
+// /* リンクカード内の画像枠 */
+// // ※読み込まれたog:imageは、この枠に《背景画像として》描画されます
+// .cardlinkimage {
+// 	// プレースホルダ的な背景グラデーション
+// 	// (※og:imageの画像指定が読み込まれたら、この値は上書きされます)
+// 	background-image: linear-gradient(-30deg, #8aa, #e0f0f0);
+// 	background-size: cover; // 背景画像で枠を埋める
+// 	background-position: center center; // 背景画像を中央に寄せる
+// 	background-repeat: no-repeat; // 背景画像を繰り返さない
+// }
+
+// /* リンクカード内のテキスト枠 */
+// .cardlinktitle,
+// .cardlinkdescription,
+// .cardlinkurl {
+// 	display: -webkit-box;
+// 	-webkit-box-orient: vertical;
+// 	overflow: hidden;
+// 	line-clamp: 1;
+// 	-webkit-line-clamp: 1;
+// 	text-overflow: ellipsis;
+// }
+
+// /* リンクタイトル */
+// .cardlinktitle {
+// }
+
+// /* リンク概要文 */
+// .cardlinkdescription {
+// }
+
+// /* リンクドメイン */
+// .cardlinkurl {
+// }
+
+// /* ----- リンクカードの装飾（サイズS用） ----- */
+// .cardsize-S {
+// 	flex-direction: row; // 画像とテキストは横に並べる(Flexbox)
+
+// 	/* リンクカード内の画像枠 */
+// 	.cardlinkimage {
+// 		min-width: 100px;
+// 		min-height: 100px;
+// 		flex-shrink: 0;
+// 	}
+
+// 	/* リンクカード内のテキスト枠 */
+// 	.cardlinktextbox {
+// 		justify-content: center;
+// 	}
+
+// 	// リンクカードのテキスト枠内の3要素
+// 	/* リンクタイトル */
+// 	.cardlinktitle {
+// 		order: 2;
+// 	}
+// 	/* リンク概要文 */
+// 	.cardlinkdescription {
+// 		order: 3;
+// 	}
+// 	/* リンクドメイン */
+// 	.cardlinkurl {
+// 		order: 1;
+// 	}
+// }
+
+// /* ----- リンクカードの装飾（サイズL用） ----- */
+// .cardsize-L {
+// 	flex-direction: column; // 画像とテキストは縦に並べる(Flexbox)
+
+// 	/* リンクカード内の画像枠 */
+// 	.cardlinkimage {
+// 		aspect-ratio: 1.91 / 1;
+// 		width: 100%;
+// 		height: auto;
+// 	}
+
+// 	/* リンクカード内のテキスト枠 */
+// 	.cardlinktextbox {
+// 	}
+// 	// リンクカードのテキスト枠内の3要素
+// 	/* リンクタイトル */
+// 	.cardlinktitle {
+// 	}
+// 	/* リンク概要文 */
+// 	.cardlinkdescription {
+// 	}
+// 	/* リンクドメイン */
+// 	.cardlinkurl {
+// 	}
+// }
