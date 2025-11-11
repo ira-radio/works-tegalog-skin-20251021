@@ -4,7 +4,7 @@
 :root {
   --font-family-basic: "Yu Gothic", Meiryo, "Hiragino Kaku Gothic ProN", sans-serif;
   --font-family-sitename: "EB Garamond", "Noto Serif JP", Yu Mincho, YuMincho, Hiragino Mincho Pro,
-  	serif;
+      serif;
   --font-family-heading: "Noto Sans JP", var(--font-family-basic);
   --font-family-icon: Material Symbols Sharp;
   --font-size-xs: 1rem;
@@ -12,6 +12,7 @@
   --font-size-basic: 1.6rem;
   --line-height-basic: 2.65rem;
   --rounded-basic: 2px;
+  --rounded-lg: 6px;
   --rounded-pill: 999px;
   --animation: 0.3s;
   --main-color-1: #fff;
@@ -159,182 +160,41 @@ a:hover {
 }
 
 /* ----- カード型リンクの装飾 ----- */
-/* ----- リンクカードの装飾（サイズ共通部分） ----- */
-/* ---------------------- */
-/* ▼カード型リンクの装飾 */
-/* ---------------------- */
+/* ----- リンクカードの装飾 ----- */
 .cardlink {
-  display: inline-block;
+  display: block;
   width: 100%;
-  max-width: 500px; /* 最大幅 (※横幅を制限したくない場合はこれを削除して下さい) */
-  padding: 0 0.25em 0.5em 0; /* 内側の余白量 */
-  font-size: 0.9rem; /* 文字サイズ */
-  text-decoration: none; /* リンク文字の下線を消す */
-  vertical-align: middle; /* 行内の上下方向では中央配置 */
+  max-width: 500px;
+  margin-inline: auto;
+  text-decoration: none;
 }
-
-/* ------------------------------------- */
-/* リンクカードの装飾(サイズS/L共通部分) */ /* ※後述の「サイズS用の追記」や「サイズL用の追記」と合わせて、1つのカードデザインになります。 */
-/* ------------------------------------- */
-/* カード外枠 */
-.cardlinkbox {
-  border: 1px solid #ccc; /* 枠線 */
-  border-radius: 7px; /* 角丸 */
-  background-color: white; /* 背景色 */
-  display: flex; /* 内部レイアウトのFlexbox化 */
+.cardlink .cardlinkbox {
+  display: flex;
+  border: 1px solid var(--main-color-3);
+  border-radius: var(--rounded-lg);
+  background: var(--main-color-1);
 }
-
-/* (マウスが載ったとき) */
-.cardlinkbox:hover {
-  background-color: #f5fff5; /* 背景色 */
-  border-color: #8c8; /* 枠線色 */
-}
-
-/* ▽リンクカード内の画像枠 (※読み込まれたog:imageは、この枠に《背景画像として》描画されます) */
-.cardlinkimage {
-  background-image: linear-gradient(-30deg, #8a8, #e0f0e0); /* プレースホルダ的な背景グラデーション(※og:imageの画像指定が読み込まれたら、この値は上書きされます) */
-  background-size: cover; /* 背景画像で枠を埋める */
-  background-position: center center; /* 背景画像を中央に寄せる */
-  background-repeat: no-repeat; /* 背景画像を繰り返さない */
-}
-
-/* ▽リンクカード内のテキスト枠 */
-.cardlinktextbox {
-  display: flex; /* Flexbox化 */
-  flex-direction: column; /* 子要素を縦方向に並べる */
-  padding: 0.5em 1em; /* 内側の余白量 */
-}
-
-/* ▽リンクカードのテキスト枠内の3要素共通 */
-.cardlinktitle,
-.cardlinkdescription,
-.cardlinkurl {
-  /* ↓表示行数を制限するための準備 (※システム側では文字数は制限せずに「記述されている全文字」をHTMLに出力しますので、表示分量を制限したい場合はCSSで制御する必要があります。) */
-  display: -webkit-box; /* -webkit-line-clampを使うために必要な記述1 ※A */
-  -webkit-box-orient: vertical; /* -webkit-line-clampを使うために必要な記述2 ※A */
-  overflow: hidden; /* 表示量を制限する場合に必須の記述 */
-  /* ↓制限の仕様 */
-  line-clamp: 1; /* 1行だけ見せる (将来的にはこれだけで実現可能かも) */
-  -webkit-line-clamp: 1; /* 1行だけ見せる (今のブラウザにはこちらが必要で、そのためには上記「※A」も必要) */
-  text-overflow: ellipsis; /* 省略記号(三点リーダー) */
-}
-
-/* リンクタイトル */
-.cardlinktitle {
-  padding-bottom: 0.25em; /* 内側下端の余白量 */
-}
-
-/* リンク概要文 */
-.cardlinkdescription {
-  line-height: 1.3; /* 行の高さ */
-  color: #555; /* 文字色 */
-  line-clamp: 2; /* (既存指定の上書き) 最大2行まで見せる */
-  -webkit-line-clamp: 2; /* (既存指定の上書き) 最大2行まで見せる */
-}
-
-/* リンクドメイン */
-.cardlinkurl {
-  color: #999; /* 文字色 */
-}
-
-/* ----------------------------------- */
-/* リンクカードの装飾(サイズS用の追記) */ /* 前述の「サイズS/L共通部分」と合わせて、1つのカードデザインになります。 */
-/* ----------------------------------- */
-.cardsize-S {
-  flex-direction: row; /* 画像とテキストは横に並べる(Flexbox) */
-}
-
-/* ▽リンクカード内の画像枠 */
-.cardsize-S .cardlinkimage {
-  min-width: 100px; /* 最小の横幅 */
-  min-height: 100px; /* 最小の高さ */
-  border-radius: 6px 0 0 6px; /* 左側だけ角丸 */
-  flex-shrink: 0; /* 枠サイズを自動縮小させない */
-}
-
-/* ▽リンクカード内のテキスト枠 */
-.cardsize-S .cardlinktextbox {
-  border-left: 1px solid #ccc; /* 左側の枠線 */
-  justify-content: center; /* Flexboxの上下方向での中央寄せ */
-}
-
-/* ▽リンクカードのテキスト枠内の3要素 */
-.cardsize-S .cardlinktitle {
-  order: 2;
-} /* タイトルは、2番目に表示 */
-.cardsize-S .cardlinkdescription {
-  order: 3;
-} /* 概要文　は、3番目に表示 */
-.cardsize-S .cardlinkurl {
-  order: 1;
-} /* ドメインは、1番上に表示 */
-/* ----------------------------------- */
-/* リンクカードの装飾(サイズL用の追記) */ /* 前述の「サイズS/L共通部分」と合わせて、1つのカードデザインになります。 */
-/* ----------------------------------- */
-.cardsize-L {
-  flex-direction: column; /* 画像とテキストは縦に並べる(Flexbox) */
-}
-
-/* ▽リンクカード内の画像枠 */
-.cardsize-L .cardlinkimage {
-  aspect-ratio: 1.91/1; /* 画像枠の縦横比を指定= (横)1.91：(縦)1 */
-  width: 100%; /* 横幅は枠最大に拡げる */
-  height: auto; /* 高さは自動計算 */
-  border-radius: 6px 6px 0 0; /* 上側だけ角丸 */
-}
-
-/* ▽リンクカード内のテキスト枠 */
-.cardsize-L .cardlinktextbox {
-  border-top: 1px solid #ccc; /* 上側の枠線 */
-}
-
-/* ▽リンクカードのテキスト枠内の3要素 */
-.cardsize-L .cardlinktitle {
-  font-weight: bold;
-} /* 太字 */
-.cardsize-L .cardlinkdescription {
-  min-height: 2.5em;
-} /* 内容量が少ない場合でも一定の高さを確保 */
-.cardsize-L .cardlinkurl {
-  border-top: 1px solid #ddd; /* 上側の枠線 */
-  margin-top: 0.5em; /* 上側の枠線より上の余白量 */
-  padding-top: 0.5em; /* 上側の枠線より下の余白量 */
-  font-size: 0.75rem; /* 文字サイズ(小さめ) */
-}
-
-/* カード外枠 */
-/* リンクカード内の画像枠 */
-.cardlinkimage {
+.cardlink .cardlinkbox .cardlinkimage {
   background-image: linear-gradient(-30deg, #8aa, #e0f0f0);
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
 }
-
-/* リンクカード内のテキスト枠 */
-.cardlinktitle,
-.cardlinkdescription,
-.cardlinkurl {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
-  text-overflow: ellipsis;
+.cardlink .cardlinkbox .cardlinktextbox {
+  display: flex;
+  flex-direction: column;
+}
+.cardlink .cardlinkbox .cardlinktextbox .cardlinktitle {
+  font-weight: 600;
+}
+.cardlink .cardlinkbox .cardlinktextbox .cardlinkdescription {
+  font-size: var(--font-size-sm);
+}
+.cardlink .cardlinkbox .cardlinktextbox .cardlinkurl {
+  color: var(--main-color-4);
+  font-size: var(--font-size-xs);
 }
 
-/* リンクタイトル */
-/* リンク概要文 */
-/* リンクドメイン */
-/* ----- リンクカードの装飾（サイズS用） ----- */
-.cardsize-S {
-  flex-direction: row;
-  /* リンクカード内の画像枠 */
-  /* リンクカード内のテキスト枠 */
-  /* リンクタイトル */
-  /* リンク概要文 */
-  /* リンクドメイン */
-}
 .cardsize-S .cardlinkimage {
   min-width: 100px;
   min-height: 100px;
@@ -342,31 +202,34 @@ a:hover {
 }
 .cardsize-S .cardlinktextbox {
   justify-content: center;
+  padding: 0.4em 0.6em;
 }
-.cardsize-S .cardlinktitle {
-  order: 2;
+.cardsize-S .cardlinktextbox .cardlinktitle {
+  font-size: var(--font-size-sm);
 }
-.cardsize-S .cardlinkdescription {
-  order: 3;
-}
-.cardsize-S .cardlinkurl {
-  order: 1;
+.cardsize-S .cardlinktextbox .cardlinkurl {
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
-/* ----- リンクカードの装飾（サイズL用） ----- */
 .cardsize-L {
   flex-direction: column;
-  /* リンクカード内の画像枠 */
-  /* リンクカード内のテキスト枠 */
-  /* リンクタイトル */
-  /* リンク概要文 */
-  /* リンクドメイン */
 }
 .cardsize-L .cardlinkimage {
   aspect-ratio: 1.91/1;
   width: 100%;
   height: auto;
 }
+.cardsize-L .cardlinktextbox {
+  justify-content: center;
+  padding: 0.6em 0.8em;
+}
+.cardsize-L .cardlinktextbox .cardlinkurl {
+  margin-top: 0.8em;
+  padding-top: 0.8em;
+  border-top: 1px solid var(--main-color-2);
+}
+
 /* 画像リンク */
 .imagelink {
   position: relative;

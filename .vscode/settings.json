@@ -3,5 +3,15 @@
         {
             "savePath": "/"
         }
-    ]
+    ],
+    // HTMLファイルへの設定
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnType": false,
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.insertSpaces": false,
+        "editor.tabSize": 4
+    },
+    "files.eol": "\n"
 }
