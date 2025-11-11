@@ -1,66 +1,66 @@
 @charset "utf-8";
 
-@use './scss/_base/init' as *;
+@use "./scss/_base/init" as *;
 
 /* ===== ▼ リセット　ここから（基本的には触らない方が良い部分） ▼ ===== */
-@use './scss/_base/reset' as *;
-@use './scss/_base/reset_by_espace' as *;
+@use "./scss/_base/reset" as *;
+@use "./scss/_base/reset_by_espace" as *;
 
 /* ===== ▲ リセット　ここまで（基本的には触らない方が良い部分） ▲ ===== */
 
 /* =============== */
 /*   全体共通装飾   */
 /* =============== */
-@use './scss/_styles/0_base' as *;
+@use "./scss/_styles/0_base" as *;
 
 /* ============= */
 /*   ヘッダ領域   */
 /* ============= */
-@use './scss/_styles/1_header' as *;
+@use "./scss/_styles/1_header" as *;
 
 /* ======================== */
 /*   入力フォームの表示領域   */
 /* ======================== */
-@use './scss/_styles/2_postform' as *;
+@use "./scss/_styles/2_postform" as *;
 
 /* =============================================== */
 /*   段組構成（画面の幅が800px以上ある広い場合限定）   */
 /* =============================================== */
 // 2カラム構成にしたくない場合は、この区画を全削除
-@use './scss/_styles/3_contents' as *;
+@use "./scss/_styles/3_contents" as *;
 
 /* ======================== */
 /*   メイン（ログ掲載）領域   */
 /* ======================== */
-@use './scss/_styles/4_mainarea' as *;
+@use "./scss/_styles/4_mainarea" as *;
 
 /* ================================= */
 /*   投稿ボックス（一発言）ごとの表示   */
 /* ================================= */
 // ※この領域は、内側スキンで生成しているHTMLに対する装飾
-@use './scss/_styles/5_onelogbox' as *;
+@use "./scss/_styles/5_onelogbox" as *;
 
 /* ========================================================= */
 /*   鍵付き(パスワード保護)投稿に表示される鍵入力フォームの装飾   */
 /* ========================================================= */
-@use './scss/_styles/6_passkeyform' as *;
+@use "./scss/_styles/6_passkeyform" as *;
 
 /* ================================================================== */
 /*   一発言だけが表示される際に追加表示されるユーティリティリンク群の装飾   */
 /* ================================================================== */
-@use './scss/_styles/7_utilitylinks' as *;
+@use "./scss/_styles/7_utilitylinks" as *;
 
 /* =========================== */
 /*   ■ページナビゲーション領域   */
 /* =========================== */
-@use './scss/_styles/8_pagenavi' as *;
+@use "./scss/_styles/8_pagenavi" as *;
 
 /* =========== */
 /*   サブ領域   */
 /* =========== */
-@use './scss/_styles/9_subarea' as *;
+@use "./scss/_styles/9_subarea" as *;
 
 /* ============= */
 /*   フッタ領域   */
 /* ============= */
-@use './scss/_styles/10_footer' as *;
+@use "./scss/_styles/10_footer" as *;

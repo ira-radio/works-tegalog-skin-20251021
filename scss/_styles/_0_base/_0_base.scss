@@ -4,6 +4,18 @@ body {
 	& > * {
 		padding: 0 0.6em;
 	}
+
+	&::-webkit-scrollbar {
+		inline-size: 1rem;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--bg-color);
+		border: 1px solid var(--main-color-2);
+		border-radius: var(--rounded-pill);
+	}
 }
 
 /* ----- リンクの装飾 ----- */
