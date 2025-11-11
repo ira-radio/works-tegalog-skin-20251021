@@ -1,6 +1,56 @@
-// footer {
-// 	p {
-// 	}
+footer {
+	padding-top: 0.6em;
+	background: var(--main-color-2);
+}
+
+.cornertitle {
+	font: 600 var(--font-size-sm) / 1 var(--font-family-heading);
+
+	&::before {
+		content: '-';
+		margin-inline: 4px;
+	}
+}
+
+.control-area {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+
+	.control-links {
+		margin: 0;
+		font-size: var(--font-size-sm);
+	}
+}
+
+.movelinks {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.6em;
+
+	margin: 2em 0;
+
+	a {
+		padding-block: 0.4rem;
+		padding-inline: 0.8rem;
+
+		border-radius: var(--rounded-pill);
+		background: var(--main-color-1);
+
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		text-decoration: none;
+
+		&.rsslink {
+			background: var(--main-color-3);
+		}
+	}
+}
+
+// .movelinks,
+// .rsslink {
+// 	text-align: center;
 // }
 
 // /* 戻るリンク */
@@ -11,6 +61,6 @@
 
 /* Powered-by表記のデザイン */
 .poweredby {
-	margin: 0 1em;
+	margin: 0;
 	font-size: var(--font-size-xs);
 }

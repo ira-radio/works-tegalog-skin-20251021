@@ -1,27 +1,15 @@
-// .onelogbox {
-// 	margin: 0;
-// 	padding: 1em 0;
-// 	border-bottom: 1px #e6ecf0 solid;
-// 	display: table;
-// 	width: 100%;
-// 	box-sizing: border-box;
-// }
+.onelogbox {
+	padding-block: 0.6em;
 
-// /* 限定条件表示行の直下に表示される場合 */
-// .situation + .onelogbox {
-// 	border-top: 1px #e6ecf0 solid;
-// }
+	& + .onelogbox {
+		border-top: 1px solid var(--main-color-2);
+	}
+}
 
-// /* ----- ユーザアイコン表示 ----- */
-// .iconarea {
-// 	display: table-cell;
-// 	vertical-align: top;
-// 	padding-top: 3px;
-// 	padding-right: 6px;
-// }
-// .usericon {
-// 	vertical-align: middle;
-// }
+/* 限定条件表示行の直下に表示される場合 */
+.situation + .onelogbox {
+	border-top: 1px solid var(--main-color-2);
+}
 
 // /* ----- 投稿内容側 ----- */
 // .onelogbody {
@@ -31,10 +19,23 @@
 // }
 
 // /* ----- 投稿情報表示 ----- */
-// .oneloginfo {
-// 	margin: 0 0 0.3em 0;
-// 	font-size: 0.9em;
-// }
+.onelogheader,
+.oneloginfo {
+	font-size: var(--font-size-sm);
+
+	a {
+		color: var(--main-color-4);
+		text-decoration: none;
+	}
+}
+.onelogheader {
+	display: flex;
+	justify-content: end;
+	gap: 0.6em;
+}
+.oneloginfo {
+	text-align: right;
+}
 
 // .onelogctrl {
 // 	margin: 0;
@@ -86,11 +87,14 @@
 // 	}
 // }
 
-// /* ----- カテゴリ名 ----- */
-// .categories {
-// 	font-size: 0.9em;
-// 	margin-right: 0.25em;
-// }
+/* ----- カテゴリ名 ----- */
+.categories {
+	margin: 0;
+	font-size: var(--font-size-sm);
+}
+.catseparator {
+	margin-right: 2px;
+}
 
 // /* カテゴリリンク1つ */
 // .categorylink {
@@ -125,25 +129,15 @@
 // 	color: #555;
 // }
 
-// /* ----- 編集ボタン ----- */
-// .editlink {
-// 	font-size: 0.67em;
-// 	a {
-// 		text-decoration: none;
-// 		display: inline-block;
-// 		color: #08f;
-// 		background-color: #eef;
-// 		border: 1px solid #ccf;
-// 		border-radius: 5px;
-// 		padding: 0 3px;
-
-// 		&:hover {
-// 			background-color: blue;
-// 			color: white;
-// 			border-color: blue;
-// 		}
-// 	}
-// }
+/* ----- 編集ボタン ----- */
+.editlink {
+	a {
+		&::before {
+			content: '\e3c9';
+			font-family: var(--font-family-icon);
+		}
+	}
+}
 
 // /* ----- 投稿本文 ----- */
 // .onelogcontent {

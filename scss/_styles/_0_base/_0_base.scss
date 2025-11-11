@@ -8,9 +8,11 @@ body {
 
 /* ----- リンクの装飾 ----- */
 a {
-	text-decoration: none;
+	color: var(--main-color-6);
+	text-decoration: underline;
 
 	&:hover {
+		text-decoration: none;
 	}
 }
 

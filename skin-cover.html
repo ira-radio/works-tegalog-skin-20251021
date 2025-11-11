@@ -27,21 +27,25 @@
 	<header>
 		<div class="headtitle">
 			<h1 class="maintitle">
+				<!-- ▼ここにHOMEへ戻るリンクが挿入されます。 -->
 				<a href="[[HOME:URL]]">
+					<!-- ▼ここに主タイトルが挿入されます。 -->
 					[[FREE:TITLE:MAIN]]
+					<!-- ▼ここに副タイトルが挿入されます。 -->
 					<small class="subtitle">[[FREE:TITLE:SUB]]</small>
 				</a>
 			</h1>
 			<p class="mainguide">
+				<!-- ▼ここに一行概要文が挿入されます。 -->
 				[[FREE:DESCRIPTION]]
 			</p>
 		</div>
-		<nav class="headcontrol">
-			<ul class="control-links">
-				<li><a href="[[NEWPOST:URL]]">新規投稿</a></li>
-				<li><a href="[[ADMIN:URL]]">管理用</a></li>
-			</ul>
-		</nav>
+		<div class="headcontrol">
+			<p class="control-links">
+				<a href="[[NEWPOST:URL]]">新規投稿</a>
+				<a href="[[ADMIN:URL]]">管理画面</a>
+			</p>
+		</div>
 	</header>
 
 	<!-- ■StandardSkin■ -->
@@ -85,151 +89,147 @@
 
 		</div><!-- /.mainarea -->
 
-		<!-- ========== -->
-		<!-- ▼サブ領域 -->
-		<!-- ========== -->
-		<div class="subarea">
-
-			<p class="subhead">DASHBOARD</p>
-
-			<!-- ………… -->
-			<!-- ▼検索窓 -->
-			<!-- ………… -->
-			<div class="searcharea">
-
-				<!-- ‥‥‥‥‥‥‥‥ -->
-				<!-- ▼シンプル検索窓 -->
-				<!-- ‥‥‥‥‥‥‥‥ -->
-				<div id="simplesearch">
-					<p class="cornertitle">全文検索</p>
-					<!-- ▼ここに検索窓が挿入されます。 -->
-					[[SEARCHBOX]]
-
-					<!-- ▼切替リンク(JavaScript) -->
-					<p class="siwtchsearchbox">
-						<a href="#" onclick="document.getElementById('complexsearch').style.display='block'; document.getElementById('simplesearch').style.display='none'; return false;">
-							複合検索窓に切り替える
-						</a>
-					</p>
-				</div>
-
-				<!-- ‥‥‥‥‥‥ -->
-				<!-- ▼複合検索窓 -->
-				<!-- ‥‥‥‥‥‥ -->
-				<div id="complexsearch">
-					<p class="cornertitle">■複合検索</p>
-					<!-- ▼ここに複合検索フォームが挿入されます。 -->
-					[[SEARCHBOX:COMPLEX:UDHCOM]]	<!-- 掲載要素と順序(取捨選択順序自由)： U=投稿者、D=投稿年月、H=ハッシュタグ、C=カテゴリ、O=出力順序、M=モード維持 (詳細はヘルプをご覧下さい) -->
-				</div>
-			</div>
-
- 			<div class="imagelistarea">
-				<p class="cornertitle">新着画像リスト</p>
-				<p class="imagelistbox">
-					<!-- ▼ここに投稿された画像の一覧が指定数だけ挿入されます。(CSSで調整しないと原寸表示されるので注意) -->
-					[[IMAGELIST]]
-				</p>
-				<p class="imagesinfo">
-					<span class="totalimgfiles">全[[IMAGELIST:TOTALFILES]]個</span>
-					<!-- ←投稿された画像の総数が挿入されます。 -->
-					<span class="totalimgsizes">（総容量 [[IMAGELIST:TOTALSIZES]]）</span>
-					<!-- ←投稿された画像の総データサイズが単位付きで挿入されます。 -->
-				</p>
-			</div>
-
- 			<!-- <div class="datelistarea">
-				<p class="cornertitle">日付一覧</p>
-				[[DATEBOX:LIST]]
-			</div> -->
-
- 			<!-- <div class="datelistarea">
-				<p class="cornertitle">日付検索</p>
-				[[DATEBOX:PULL]]
-			</div> -->
-
- 			<!-- <div class="calendararea">
-				<p class="cornertitle">カレンダー</p>
-				<div class="calendarplace">
-					[[CALENDAR]]
-				</div>
-				<div class="calendarlinks">
-					<a href="[[MOVEMONTH:-1:URL]]">&laquo; 前の月</a> / <a href="[[MOVEMONTH:1:URL]]">次の月 &raquo;</a>
-				</div>
-			</div> -->
-
- 			<div class="hashtaglistarea">
-				<p class="cornertitle">ハッシュタグ</p>
-				[[HASHTAG:LIST]]
-			</div>
-
- 			<div class="categoryarea">
-				<p class="cornertitle">カテゴリ</p>
-				<div class="categoryTree">
-					[[CATEGORY:TREE]]
-				</div>
-			</div>
-
- 			<!-- <div class="latestpostarea">
-				<p class="cornertitle">最近の投稿</p>
-				[[LATESTLIST]]
-			</div> -->
-
- 			<!-- <div class="freespacearea">
-				<p class="cornertitle">[[FREESPTITLE]]</p>
-				<div class="freespacebody">
-					[[FREESPACE]]
-				</div>
-				<p class="freespaceedit">
-					<a href="[[FREESPACEEDIT:URL]]">編集</a>
-				</p>
-			</div> -->
-
- 			<!-- <div class="freespacearea">
-				<p class="cornertitle">データ</p>
-				<div class="freespacebody">
-
-					<p class="infotitle">現在の表示条件での投稿総数</p>
-					<p class="infobody">[[INFO:TARGETPOSTS]]件</p>
-
-					<p class="infotitle">最後に投稿または編集した日時</p>
-					<p class="infobody">[[INFO:LASTUPDATE:Y年G月N日(b) h:m:s〔A〕]]</p>
-				</div>
-			</div> -->
-
- 			<!-- <div class="freespacearea">
-				<div class="freespacebody">
-
-					<p class="infotitle">特殊な表示モード</p>
-					<ul>
-						<li><a href="[[GALLERY:URL]]">ギャラリーモードで表示</a></li>
-						<li><a href="[[PICTS:URL]]">画像一覧モードで表示</a></li>
-						<li><a href="[[SITEMAP:URL]]">サイトマップモードで表示</a></li>
-						<li><a href="[[RANDOM:URL]]">ランダムに1件を表示</a></li>
-						<li><a href="[[REVERSE:URL]]">今の表示を[[REVERSE:NAME]]で見る</a></li>
-					</ul>
-				</div>
-			</div> -->
-
-			<p><a href="[[RSS:URL]]">RSSフィード</a></p>
-
-		</div><!-- /.subarea -->
-
 	</div><!-- /.contents -->
 
-	<!-- ■StandardSkin■ -->
 
 	<!-- ――――――――――――― -->
 	<!-- ▼ページ最下部(フッタ)領域 -->
 	<!-- ――――――――――――― -->
 	<footer>
-		<p class="control-links">
-			<a href="[[HOME:URL]]">[[FREE:TITLE:MAIN]]TOP</a>
-			<a href="[[NEWPOST:URL]]">新規投稿</a>
-			<a href="[[ADMIN:URL]]">管理画面</a>
-		</p>
-		<p class="backlink">[[FREE:HOMELINK]]</p>
+		<!-- ………… -->
+		<!-- ▼検索窓 -->
+		<!-- ………… -->
+		<div class="searcharea">
 
-		<p class="poweredby">[[VERSION]].</p>
+			<!-- ‥‥‥‥‥‥‥‥ -->
+			<!-- ▼シンプル検索窓 -->
+			<!-- ‥‥‥‥‥‥‥‥ -->
+			<div id="simplesearch">
+				<p class="cornertitle">全文検索</p>
+				<!-- ▼ここに検索窓が挿入されます。 -->
+				[[SEARCHBOX]]
+
+				<!-- ▼切替リンク(JavaScript) -->
+				<p class="siwtchsearchbox">
+					<a href="#" onclick="document.getElementById('complexsearch').style.display='block'; document.getElementById('simplesearch').style.display='none'; return false;">
+						複合検索窓に切り替える
+					</a>
+				</p>
+			</div>
+
+			<!-- ‥‥‥‥‥‥ -->
+			<!-- ▼複合検索窓 -->
+			<!-- ‥‥‥‥‥‥ -->
+			<div id="complexsearch">
+				<p class="cornertitle">複合検索</p>
+				<!-- ▼ここに複合検索フォームが挿入されます。 -->
+				[[SEARCHBOX:COMPLEX:UDHCOM]]	<!-- 掲載要素と順序(取捨選択順序自由)： U=投稿者、D=投稿年月、H=ハッシュタグ、C=カテゴリ、O=出力順序、M=モード維持 (詳細はヘルプをご覧下さい) -->
+			</div>
+		</div>
+
+		<!-- <div class="imagelistarea">
+			<p class="cornertitle">新着画像リスト</p>
+			<p class="imagelistbox">
+				[[IMAGELIST]]
+			</p>
+			<p class="imagesinfo">
+				<span class="totalimgfiles">全[[IMAGELIST:TOTALFILES]]個</span>
+				<span class="totalimgsizes">（総容量 [[IMAGELIST:TOTALSIZES]]）</span>
+			</p>
+		</div> -->
+
+		<!-- <div class="datelistarea">
+			<p class="cornertitle">日付一覧</p>
+			[[DATEBOX:LIST]]
+		</div> -->
+
+		<!-- <div class="datelistarea">
+			<p class="cornertitle">日付検索</p>
+			[[DATEBOX:PULL]]
+		</div> -->
+
+		<!-- <div class="calendararea">
+			<p class="cornertitle">カレンダー</p>
+			<div class="calendarplace">
+				[[CALENDAR]]
+			</div>
+			<div class="calendarlinks">
+				<a href="[[MOVEMONTH:-1:URL]]">&laquo; 前の月</a> / <a href="[[MOVEMONTH:1:URL]]">次の月 &raquo;</a>
+			</div>
+		</div> -->
+
+		<div class="hashtaglistarea">
+			<p class="cornertitle">ハッシュタグ</p>
+			[[HASHTAG:LIST]]
+		</div>
+
+		<div class="categoryarea">
+			<p class="cornertitle">カテゴリ</p>
+			<div class="categoryTree">
+				[[CATEGORY:TREE]]
+			</div>
+		</div>
+
+		<!-- <div class="latestpostarea">
+			<p class="cornertitle">最近の投稿</p>
+			[[LATESTLIST]]
+		</div> -->
+
+		<!-- <div class="freespacearea">
+			<p class="cornertitle">[[FREESPTITLE]]</p>
+			<div class="freespacebody">
+				[[FREESPACE]]
+			</div>
+			<p class="freespaceedit">
+				<a href="[[FREESPACEEDIT:URL]]">編集</a>
+			</p>
+		</div> -->
+
+		<!-- <div class="freespacearea">
+			<p class="cornertitle">データ</p>
+			<div class="freespacebody">
+
+				<p class="infotitle">現在の表示条件での投稿総数</p>
+				<p class="infobody">[[INFO:TARGETPOSTS]]件</p>
+
+				<p class="infotitle">最後に投稿または編集した日時</p>
+				<p class="infobody">[[INFO:LASTUPDATE:Y年G月N日(b) h:m:s〔A〕]]</p>
+			</div>
+		</div> -->
+
+		<!-- <div class="freespacearea">
+			<div class="freespacebody">
+
+				<p class="infotitle">特殊な表示モード</p>
+				<ul>
+					<li><a href="[[GALLERY:URL]]">ギャラリーモードで表示</a></li>
+					<li><a href="[[PICTS:URL]]">画像一覧モードで表示</a></li>
+					<li><a href="[[SITEMAP:URL]]">サイトマップモードで表示</a></li>
+					<li><a href="[[RANDOM:URL]]">ランダムに1件を表示</a></li>
+					<li><a href="[[REVERSE:URL]]">今の表示を[[REVERSE:NAME]]で見る</a></li>
+				</ul>
+			</div>
+		</div> -->
+
+		<nav class="movelinks">
+			<div>
+				<a href="[[HOME:URL]]">[[FREE:TITLE:MAIN]] top</a>
+				[[FREE:HOMELINK]]
+			</div>
+	
+			<div>
+				<a href="[[RSS:URL]]" class="rsslink">RSSフィード</a>
+			</div>
+		</nav>
+		
+		<div class="control-area">
+			<nav class="control-links">
+				<a href="[[NEWPOST:URL]]">新規投稿</a>
+				<a href="[[ADMIN:URL]]">管理画面</a>
+			</nav>
+	
+			<p class="poweredby">[[VERSION]].</p>
+		</div>
 	</footer>
 
 	<!-- ――――――――――――― -->

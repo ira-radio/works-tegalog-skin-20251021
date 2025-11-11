@@ -3,16 +3,15 @@
 // 	background-color: white;
 // }
 
-// /* ----- 表示対象の限定時などの「限定条件」表示行 ----- */
-// .situation {
-// 	margin: 1em;
-// 	font-weight: bold;
-// 	color: #05f;
+/* ----- 表示対象の限定時などの「限定条件」表示行 ----- */
+.situation {
+	font-size: var(--font-size-sm);
+	font-weight: bold;
 
-// 	&:empty {
-// 		display: none;
-// 	}
-// }
+	&:empty {
+		display: none;
+	}
+}
 
 // /* ----- 日付セパレータ行 ----- */
 // .dateseparator {

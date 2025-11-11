@@ -1,3 +1,22 @@
+.pagenavi {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6em;
+
+	margin: 5em 0;
+
+	text-align: center;
+	line-height: 1;
+
+	& > * {
+		margin: 0;
+	}
+
+	a {
+		display: inline-block;
+	}
+}
+
 // .pagenavi {
 // 	margin: 2.5em 0px;
 // 	padding: 0.5em 0px;
@@ -12,20 +31,84 @@
 // 		text-align: center;
 // 	}
 // }
+.pagelinks,
+.pagenums {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.6em;
+}
 
-// /* ----- ページ前後移動リンク ----- */
-// .pagelinks {
-// 	margin: 0.75em;
+/* ----- ページ前後移動リンク ----- */
+.pagelinks {
+	a {
+		color: var(--main-color-3);
+		text-decoration: none;
+		font-size: 3.6rem;
 
-// 	a {
-// 		font-weight: bold;
-// 	}
-// }
+		transition: color var(--animation);
 
-// /* ----- ページ番号リンク ----- */
-// p.pagenums {
-// 	margin: 0.5em;
-// }
+		&:hover {
+			color: var(--main-color-6);
+		}
+
+		&::before,
+		&::after {
+			font-family: var(--font-family-icon);
+		}
+		&.prevlink {
+			&::before {
+				content: '\f46b';
+			}
+		}
+
+		&.nextlink {
+			&::after {
+				content: '\f46a';
+			}
+		}
+
+		// 		&::after {
+		// 	content: '\e000';
+		// 	position: absolute;
+		// 	top: calc(50% - 20px);
+		// 	left: calc(50% - 20px);
+		// 	aspect-ratio: 1/1;
+		// 	width: 40px;
+
+		// 	font-family: var(--font-family-icon);
+		// 	font-size: 40px;
+		// 	line-height: 1;
+		// 	color: var(--main-color-1);
+		// }
+	}
+}
+
+/* ----- ページ番号リンク ----- */
+.pagenums {
+	a {
+		min-width: 26px;
+		height: 26px;
+		padding: 4px 4px;
+
+		border: 1px solid var(--main-color-2);
+		border-radius: var(--rounded-pill);
+		background: var(--main-color-1);
+
+		text-align: center;
+		text-decoration: none;
+
+		transition: border-color var(--animation);
+
+		&:hover {
+			border-color: var(--main-color-3);
+		}
+
+		&.pagenumhere {
+			background: var(--main-color-2);
+		}
+	}
+}
 
 // /* ページ番号リンクの数字 */
 // .pagenums {
@@ -54,7 +137,16 @@
 // 	border-radius: 1em;
 // }
 
-// /* ----- 限定解除リンク（＝HOMEに戻るリンク） ----- */
-// .pagehome {
-// 	font-weight: bold;
-// }
+/* ----- 限定解除リンク（＝HOMEに戻るリンク） ----- */
+.pagehome {
+	a {
+		min-width: 140px;
+		color: var(--main-color-3);
+		transition: color var(--animation);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--main-color-6);
+		}
+	}
+}

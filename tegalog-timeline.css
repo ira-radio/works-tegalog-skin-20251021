@@ -135,34 +135,114 @@ body > * {
 
 /* ----- リンクの装飾 ----- */
 a {
+  color: var(--main-color-6);
+  text-decoration: underline;
+}
+a:hover {
   text-decoration: none;
 }
+
 /* ----- URLが書かれた場合の装飾 ----- */
 .url {
   word-break: break-all; /* 自動リンクのはみ出しを防ぐ */
 }
 
 /* ----- カード型リンクの装飾 ----- */
-/* 画像リンク */
-.imagelink {
-  display: inline-block;
-  line-height: 1;
-  vertical-align: inherit;
+/* ----- リンクカードの装飾（サイズ共通部分） ----- */
+/* カード外枠 */
+/* リンクカード内の画像枠 */
+.cardlinkimage {
+  background-image: linear-gradient(-30deg, #8aa, #e0f0f0);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.embeddedimage {
-  max-width: 100%;
-  max-height: 240px;
-  width: auto;
+/* リンクカード内のテキスト枠 */
+.cardlinktitle,
+.cardlinkdescription,
+.cardlinkurl {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+}
+
+/* リンクタイトル */
+/* リンク概要文 */
+/* リンクドメイン */
+/* ----- リンクカードの装飾（サイズS用） ----- */
+.cardsize-S {
+  flex-direction: row;
+  /* リンクカード内の画像枠 */
+  /* リンクカード内のテキスト枠 */
+  /* リンクタイトル */
+  /* リンク概要文 */
+  /* リンクドメイン */
+}
+.cardsize-S .cardlinkimage {
+  min-width: 100px;
+  min-height: 100px;
+  flex-shrink: 0;
+}
+.cardsize-S .cardlinktextbox {
+  justify-content: center;
+}
+.cardsize-S .cardlinktitle {
+  order: 2;
+}
+.cardsize-S .cardlinkdescription {
+  order: 3;
+}
+.cardsize-S .cardlinkurl {
+  order: 1;
+}
+
+/* ----- リンクカードの装飾（サイズL用） ----- */
+.cardsize-L {
+  flex-direction: column;
+  /* リンクカード内の画像枠 */
+  /* リンクカード内のテキスト枠 */
+  /* リンクタイトル */
+  /* リンク概要文 */
+  /* リンクドメイン */
+}
+.cardsize-L .cardlinkimage {
+  aspect-ratio: 1.91/1;
+  width: 100%;
   height: auto;
+}
+/* 画像リンク */
+.imagelink {
+  position: relative;
+  display: inline-block;
+  aspect-ratio: 1/1;
+  width: 120px;
+  overflow: hidden;
+}
+.imagelink.nsfw::after {
+  content: "\e000";
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  aspect-ratio: 1/1;
+  width: 40px;
+  font-family: var(--font-family-icon);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--main-color-1);
+}
+
+/* 画像そのもの */
+.embeddedimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* フラグ付き画像 */
-figure.nsfw,
-.imagelink.nsfw {
-  overflow: hidden;
-}
-
 img.nsfw {
   filter: blur(9px);
 }
@@ -183,6 +263,7 @@ header {
 }
 .headtitle .maintitle a {
   color: var(----main-color-6);
+  text-decoration: none;
 }
 .headtitle .subtitle {
   font-size: var(--font-size-basic);
@@ -320,9 +401,66 @@ header {
 /* ======================== */
 /*   メイン（ログ掲載）領域   */
 /* ======================== */
+/* ----- 表示対象の限定時などの「限定条件」表示行 ----- */
+.situation {
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+}
+.situation:empty {
+  display: none;
+}
+
 /* ================================= */
 /*   投稿ボックス（一発言）ごとの表示   */
 /* ================================= */
+.onelogbox {
+  padding-block: 0.6em;
+}
+.onelogbox + .onelogbox {
+  border-top: 1px solid var(--main-color-2);
+}
+
+/* 限定条件表示行の直下に表示される場合 */
+.situation + .onelogbox {
+  border-top: 1px solid var(--main-color-2);
+}
+
+.onelogheader,
+.oneloginfo {
+  font-size: var(--font-size-sm);
+}
+.onelogheader a,
+.oneloginfo a {
+  color: var(--main-color-4);
+  text-decoration: none;
+}
+
+.onelogheader {
+  display: flex;
+  justify-content: end;
+  gap: 0.6em;
+}
+
+.oneloginfo {
+  text-align: right;
+}
+
+/* ----- カテゴリ名 ----- */
+.categories {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.catseparator {
+  margin-right: 2px;
+}
+
+/* ----- 編集ボタン ----- */
+.editlink a::before {
+  content: "\e3c9";
+  font-family: var(--font-family-icon);
+}
+
 /* ========================================================= */
 /*   鍵付き(パスワード保護)投稿に表示される鍵入力フォームの装飾   */
 /* ========================================================= */
@@ -332,14 +470,185 @@ header {
 /* =========================== */
 /*   ■ページナビゲーション領域   */
 /* =========================== */
+.pagenavi {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  margin: 5em 0;
+  text-align: center;
+  line-height: 1;
+}
+.pagenavi > * {
+  margin: 0;
+}
+.pagenavi a {
+  display: inline-block;
+}
+
+.pagelinks,
+.pagenums {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6em;
+}
+
+/* ----- ページ前後移動リンク ----- */
+.pagelinks a {
+  color: var(--main-color-3);
+  text-decoration: none;
+  font-size: 3.6rem;
+  transition: color var(--animation);
+}
+.pagelinks a:hover {
+  color: var(--main-color-6);
+}
+.pagelinks a::before, .pagelinks a::after {
+  font-family: var(--font-family-icon);
+}
+.pagelinks a.prevlink::before {
+  content: "\f46b";
+}
+.pagelinks a.nextlink::after {
+  content: "\f46a";
+}
+
+/* ----- ページ番号リンク ----- */
+.pagenums a {
+  min-width: 26px;
+  height: 26px;
+  padding: 4px 4px;
+  border: 1px solid var(--main-color-2);
+  border-radius: var(--rounded-pill);
+  background: var(--main-color-1);
+  text-align: center;
+  text-decoration: none;
+  transition: border-color var(--animation);
+}
+.pagenums a:hover {
+  border-color: var(--main-color-3);
+}
+.pagenums a.pagenumhere {
+  background: var(--main-color-2);
+}
+
+/* ----- 限定解除リンク（＝HOMEに戻るリンク） ----- */
+.pagehome a {
+  min-width: 140px;
+  color: var(--main-color-3);
+  transition: color var(--animation);
+  text-decoration: none;
+}
+.pagehome a:hover {
+  color: var(--main-color-6);
+}
+
 /* =========== */
 /*   サブ領域   */
 /* =========== */
+/* ----- 検索窓区画 ----- */
+.searcharea input[type=text],
+.searcharea select {
+  border: 0;
+  border-radius: var(--rounded-basic);
+}
+
+.submitbutton {
+  margin-left: 0.6em;
+  border: 0;
+  border-radius: var(--rounded-basic);
+  background: var(--main-color-6);
+  color: var(--main-color-1);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+/* 検索対象を限定するチェックボックス */
+.searchtarget {
+  font-size: var(--font-size-sm);
+  line-height: 1;
+}
+.searchtarget label span {
+  margin-left: 0.2em;
+}
+
+/* 検索フォーム形式の切り替えリンク */
+.siwtchsearchbox a {
+  font-size: var(--font-size-sm);
+}
+.siwtchsearchbox a::before {
+  content: "\e915";
+  font-family: var(--font-family-icon);
+}
+
+/* 複合検索フォーム */
+#complexsearch {
+  display: none;
+}
+
+/* 検索オプションリスト */
+.searchoptions {
+  font-size: var(--font-size-sm);
+}
+.searchoptions select {
+  max-width: 175px;
+  overflow: hidden;
+}
+
+/* 項目名 */
+.solabel {
+  display: inline-block;
+  min-width: 5em;
+}
+
 /* ============= */
 /*   フッタ領域   */
 /* ============= */
+footer {
+  padding-top: 0.6em;
+  background: var(--main-color-2);
+}
+
+.cornertitle {
+  font: 600 var(--font-size-sm)/1 var(--font-family-heading);
+}
+.cornertitle::before {
+  content: "-";
+  margin-inline: 4px;
+}
+
+.control-area {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.control-area .control-links {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.movelinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+  margin: 2em 0;
+}
+.movelinks a {
+  padding-block: 0.4rem;
+  padding-inline: 0.8rem;
+  border-radius: var(--rounded-pill);
+  background: var(--main-color-1);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+.movelinks a.rsslink {
+  background: var(--main-color-3);
+}
+
 /* Powered-by表記のデザイン */
 .poweredby {
-  margin: 0 1em;
+  margin: 0;
   font-size: var(--font-size-xs);
 }
