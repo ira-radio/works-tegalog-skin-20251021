@@ -1,38 +1,74 @@
 body {
-	font: 500 var(--font-size-basic) / var(--line-height-basic) var(--font-family-basic);
+    font: 500 var(--font-size-basic) / var(--line-height-basic) var(--font-family-basic);
 
-	& > * {
-		padding: 0 0.6em;
-	}
+    color: var(--text-color);
 
-	&::-webkit-scrollbar {
-		inline-size: 1rem;
-	}
-	&::-webkit-scrollbar-track {
-		background-color: transparent;
-	}
-	&::-webkit-scrollbar-thumb {
-		background-color: var(--bg-color);
-		border: 1px solid var(--main-color-2);
-		border-radius: var(--rounded-pill);
-	}
+    & > * {
+        padding: 0 0.6em;
+    }
+
+    &::-webkit-scrollbar {
+        inline-size: 1rem;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--bg-color);
+        border: 1px solid var(--main-color-2);
+        border-radius: var(--rounded-pill);
+    }
 }
 
 /* ----- リンクの装飾 ----- */
 a {
-	color: var(--main-color-6);
-	text-decoration: underline;
+    color: var(--main-color-6);
+    text-decoration: underline;
 
-	&:hover {
-		text-decoration: none;
-	}
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 /* ----- URLが書かれた場合の装飾 ----- */
 .url {
-	word-break: break-all; /* 自動リンクのはみ出しを防ぐ */
+    word-break: break-all; /* 自動リンクのはみ出しを防ぐ */
 }
 
 /* ----- カード型リンクの装飾 ----- */
 .cardlink {
+}
+
+/* ----- ボタンの基本装飾 ----- */
+[type="submit"],
+[type="button"],
+[type="file"]::file-selector-button {
+    cursor: pointer;
+    display: inline-block;
+
+    background: var(--main-color-1);
+    border: 2px solid var(--main-color-2);
+    border-radius: var(--rounded-basic);
+
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+
+    transition: border-color var(--animation);
+
+    &:hover {
+        border-color: var(--main-color-6);
+    }
+}
+
+textarea,
+input:not([type="button"]):not([type="submit"]):not([type="file"]) {
+    border: 1px solid var(--main-color-2);
+    border-radius: var(--rounded-basic);
+
+    transition: border-color var(--animation);
+
+    &:hover,
+    &:focus {
+        border-color: var(--main-color-3);
+    }
 }

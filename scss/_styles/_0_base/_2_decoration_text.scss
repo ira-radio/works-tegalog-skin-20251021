@@ -1,60 +1,72 @@
-// /* ----- 汎用装飾：文字 ----- */
-// /* B:太字(Bold) */
-// .decorationB {
-// 	font-weight: bold;
-// }
+/* ----- 汎用装飾：文字 ----- */
+/* B:太字(Bold) */
+.decorationB {
+    font-weight: bold;
+}
 
-// /* D:削除(Delete) */
-// .decorationD {
-// 	color: #888;
-// 	text-decoration-line: line-through;
-// 	text-decoration-color: darkblue;
-// }
+/* D:削除(Delete) */
+.decorationD {
+    color: var(--main-color-4);
+    text-decoration-line: line-through;
+    text-decoration-color: var(--main-color-6);
+}
 
-// /* E:強調(Emphasis) */
-// .decorationE {
-// 	font-style: normal;
-// 	font-weight: bold;
-// 	color: #05c;
-// }
+/* E:強調(Emphasis) */
+.decorationE {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--deco-e-text-color);
+}
 
-// /* I:斜体(Italic) */
-// .decorationI {
-// 	font-style: italic;
-// }
+/* I:斜体(Italic) */
+.decorationI {
+    font-style: italic;
+}
 
-// /* Q:引用(Quote) */
-// .decorationQ {
-// 	border-left: 5px double skyblue;
-// 	margin: 1em 0.3em 1em 1em;
-// 	padding: 0.75em 0.5em;
-// 	background-color: #f8f8ff;
-// 	font-size: 0.95em;
-// 	display: block; /* ※Ver 2.2.0以降必須の記述 */
+/* Q:引用(Quote) */
+.decorationQ {
+    position: relative;
+    display: block;
+    margin: 1em;
+    padding: 0.6em;
 
-// 	&::before,
-// 	&::after {
-// 		content: ''; /* 標準で付加されてしまう引用符を無効にする */
-// 	}
+    border: 1px solid var(--main-color-3);
+    border-radius: var(--rounded-basic);
 
-// 	& + br {
-// 		display: none; /* 引用直後の改行を無効化する */
-// 	}
-// }
+    font-size: var(--font-size-sm);
+    text-indent: 2em;
 
-// /* S:小文字(Small) */
-// .decorationS {
-// 	font-size: var(--font-size-xs);
-// }
+    &::after {
+        content: "";
+    }
 
-// /* T:極小文字(Tiny) */
-// .decorationT {
-// 	font-size: 0.6em;
-// }
+    &::before {
+        content: "\e244";
+        position: absolute;
+        top: 0.4em;
+        left: -0.8em;
 
-// /* U:下線(Underline) */
-// .decorationU {
-// 	text-decoration-line: underline;
-// 	text-decoration-style: double;
-// 	text-decoration-color: skyblue;
-// }
+        color: var(--main-color-3);
+        font-family: var(--font-family-icon);
+        font-size: 2rem;
+    }
+
+    & + br {
+        display: none;
+    }
+}
+
+/* S:小文字(Small) */
+.decorationS {
+    font-size: var(--font-size-sm);
+}
+
+/* T:極小文字(Tiny) */
+.decorationT {
+    font-size: var(--font-size-xs);
+}
+
+/* U:下線(Underline) */
+.decorationU {
+    text-decoration-line: underline;
+}

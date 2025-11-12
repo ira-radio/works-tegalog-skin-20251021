@@ -1,39 +1,40 @@
-// .passkeyform {
-// 	display: inline-block;
-// 	margin: 0;
-// 	padding: 0.6em;
-// 	background-color: #e8f4ff;
-// 	border: 1px solid #bfe2ff;
-// 	border-radius: 0.25em;
-// }
+.passkeyform {
+    padding: 0.6em;
+    border: 1px solid var(--main-color-2);
+    border-radius: var(--rounded-basic);
 
-// /* 鍵違いエラーの表示 */
-// .passkeyerror {
-// 	display: block;
-// 	color: white;
-// 	background-color: #08f;
-// 	font-weight: bold;
-// 	line-height: 1;
-// 	margin: 0 0 0.5em 0;
-// 	padding: 0.33em 0.25em;
-// }
+    .passkeyguide {
+        font-size: var(--font-size-sm);
+    }
+}
 
-// /* 入力フォーム枠 */
-// .passkeybox {
-// 	display: block;
-// }
+/* 鍵違いエラーの表示 */
+.passkeyerror {
+    display: block;
+    margin-bottom: 0.4em;
+    padding: 0.2em 0.4em;
+    background: var(--error-color-1);
+    border: 1px solid var(--error-color-2);
+    border-radius: var(--rounded-basic);
+    font-size: var(--font-size-sm);
+}
 
-// /* 入力欄前のガイド文 */
-// .passkeyguide {
-// 	margin-right: 0.1em;
-// }
+/* 入力フォーム枠 */
+.passkeybox {
+    display: block;
+}
 
-// /* 鍵入力欄 */
-// .passkeyinput {
-// 	width: 10em;
-// 	margin: 0 0.25em 3px 0;
-// }
+/* 入力欄前のガイド文 */
+.passkeyguide {
+    margin-right: 0.1em;
+}
 
-// /* 送信ボタン */
-// .passkeysubmit {
-// }
+/* 鍵入力欄 */
+.passkeyinput {
+    width: 10em;
+    margin: 0 0.25em 3px 0;
+}
+
+/* 送信ボタン */
+.passkeysubmit {
+}

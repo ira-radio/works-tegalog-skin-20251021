@@ -1,108 +1,94 @@
 /* ----- 本文入力欄 ----- */
 .postarea {
-	.line-textarea {
-		margin: 0;
-		margin-block: 0;
-		textarea {
-			width: 100%;
-			border: 1px solid var(--main-color-2);
-			border-radius: var(--rounded-basic);
+    .line-textarea {
+        margin: 0;
+        margin-block: 0;
+        textarea {
+            width: 100%;
+        }
+    }
 
-			transition: border-color var(--animation);
+    .line-control {
+        line-height: 3.4em;
 
-			&:hover,
-			&:focus {
-				border-color: var(--main-color-3);
-			}
-		}
-	}
+        /* ----- 投稿ボタン・文字装飾ボタン群 ----- */
+        .postbutton,
+        [type="button"],
+        [type="file"]::file-selector-button {
+            display: inline-block;
+        }
 
-	.line-control {
-		line-height: 3.4em;
+        .postbutton,
+        [type="button"] {
+            padding-block: 0.4rem;
+            padding-inline: 0.4rem;
+            line-height: 1;
+        }
+        .postbutton {
+            padding-inline: 2rem;
 
-		/* ----- 投稿ボタン・文字装飾ボタン群 ----- */
-		.postbutton,
-		[type='button'],
-		[type='file']::file-selector-button {
-			cursor: pointer;
-			display: inline-block;
-		}
+            background: var(--main-color-6);
+            border: 0;
+            border-radius: var(--rounded-pill);
 
-		.postbutton,
-		[type='button'] {
-			padding-block: 0.4rem;
-			padding-inline: 0.4rem;
-			line-height: 1;
-		}
-		.postbutton {
-			padding-inline: 2rem;
+            color: var(--main-color-1);
+            line-height: var(--line-height-basic);
+        }
 
-			background: var(--main-color-6);
-			border: 0;
-			border-radius: var(--rounded-pill);
+        [id*="postcount"] {
+            font-size: var(--font-size-xs);
+        }
 
-			color: var(--main-color-1);
-			line-height: var(--line-height-basic);
-		}
+        [class*="Btns"] {
+            [id*="Door"] [type="button"],
+            & > [type="button"] {
+                padding-inline: 1rem;
 
-		[id*='postcount'] {
-			font-size: var(--font-size-xs);
-		}
+                background: var(--main-color-2);
+                border: 0;
+                border-radius: var(--rounded-pill);
 
-		[class*='Btns'] {
-			[id*='Door'] [type='button'],
-			& > [type='button'] {
-				padding-inline: 1rem;
+                line-height: var(--line-height-basic);
+            }
 
-				background: var(--main-color-2);
-				border: 0;
-				border-radius: var(--rounded-pill);
+            [id*="Set"],
+            [id*="imageBtns"] {
+                padding: 14px 6px;
 
-				color: var(--main-color-6);
-				line-height: var(--line-height-basic);
-			}
+                border: 1px solid var(--main-color-2);
+                border-inline-start-width: 4px;
+                border-radius: var(--rounded-basic);
 
-			[id*='Set'],
-			[id*='imageBtns'] {
-				padding: 14px 6px;
+                line-height: 1;
+                vertical-align: middle;
 
-				border: 1px solid var(--main-color-2);
-				border-inline-start-width: 4px;
-				border-radius: var(--rounded-basic);
+                [type="button"],
+                [type="file"]::file-selector-button {
+                    & + [type="button"] {
+                        margin-inline-start: 4px;
+                    }
+                }
 
-				line-height: 1;
-				vertical-align: middle;
+                [class*="Checks"],
+                [type="button"] {
+                    & + [class*="Checks"],
+                    & + [type="button"] {
+                        margin-inline-start: 0.6em;
+                    }
+                }
 
-				[type='button'],
-				[type='file']::file-selector-button {
-					border: 2px solid var(--main-color-2);
-					border-radius: var(--rounded-basic);
+                [type="button"] {
+                    & + [type="button"] {
+                        margin-inline-start: 4px;
+                    }
+                }
 
-					& + [type='button'] {
-						margin-inline-start: 2px;
-					}
-				}
-
-				[class*='Checks'],
-				[type='button'] {
-					& + [class*='Checks'],
-					& + [type='button'] {
-						margin-inline-start: 0.6em;
-					}
-				}
-
-				[type='button'] {
-					& + [type='button'] {
-						margin-inline-start: 2px;
-					}
-				}
-
-				[class*='Checks'] {
-					label + label {
-						margin-inline-start: 0.6em;
-					}
-				}
-			}
-		}
-	}
+                [class*="Checks"] {
+                    label + label {
+                        margin-inline-start: 0.6em;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,62 +1,59 @@
 /* ----- 検索窓区画 ----- */
 .searcharea {
-	input[type='text'],
-	select {
-		border: 0;
-		border-radius: var(--rounded-basic);
-	}
+    input[type="text"],
+    select {
+        border: 0;
+        border-radius: var(--rounded-basic);
+    }
 }
 
 .submitbutton {
-	margin-left: 0.6em;
-	border: 0;
-	border-radius: var(--rounded-basic);
-	background: var(--main-color-6);
-	color: var(--main-color-1);
-	font-size: var(--font-size-sm);
-	font-weight: 600;
+    margin-left: 0.6em;
+    border: 0;
+    background: var(--main-color-6);
+    color: var(--main-color-1);
 }
 
 /* 検索対象を限定するチェックボックス */
 .searchtarget {
-	font-size: var(--font-size-sm);
-	line-height: 1;
+    font-size: var(--font-size-sm);
+    line-height: 1;
 
-	label {
-		span {
-			margin-left: 0.2em;
-		}
-	}
+    label {
+        span {
+            margin-left: 0.2em;
+        }
+    }
 }
 
 /* 検索フォーム形式の切り替えリンク */
 .siwtchsearchbox {
-	a {
-		font-size: var(--font-size-sm);
-		&::before {
-			content: '\e915';
-			font-family: var(--font-family-icon);
-		}
-	}
+    a {
+        font-size: var(--font-size-sm);
+        &::before {
+            content: "\e915";
+            font-family: var(--font-family-icon);
+        }
+    }
 }
 
 /* 複合検索フォーム */
 #complexsearch {
-	display: none;
+    display: none;
 }
 
 /* 検索オプションリスト */
 .searchoptions {
-	font-size: var(--font-size-sm);
+    font-size: var(--font-size-sm);
 
-	select {
-		max-width: 175px;
-		overflow: hidden;
-	}
+    select {
+        max-width: 175px;
+        overflow: hidden;
+    }
 }
 
 /* 項目名 */
 .solabel {
-	display: inline-block;
-	min-width: 5em;
+    display: inline-block;
+    min-width: 5em;
 }

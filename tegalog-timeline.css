@@ -21,6 +21,11 @@
   --main-color-4: #8b8b8b;
   --main-color-5: #3f3f3f;
   --main-color-6: #000;
+  --text-color: var(--main-color-6);
+  --error-color-1: #ffdfdf;
+  --error-color-2: #ff6060;
+  --search-word-color: #cdfaff;
+  --deco-e-text-color: #05c;
   --btn-bg-color: var(--main-color-6);
   --btn-text-color: var(--main-color-1);
 }
@@ -129,6 +134,7 @@ main {
 /* =============== */
 body {
   font: 500 var(--font-size-basic)/var(--line-height-basic) var(--font-family-basic);
+  color: var(--text-color);
 }
 body > * {
   padding: 0 0.6em;
@@ -160,6 +166,37 @@ a:hover {
 }
 
 /* ----- カード型リンクの装飾 ----- */
+/* ----- ボタンの基本装飾 ----- */
+[type=submit],
+[type=button],
+[type=file]::file-selector-button {
+  cursor: pointer;
+  display: inline-block;
+  background: var(--main-color-1);
+  border: 2px solid var(--main-color-2);
+  border-radius: var(--rounded-basic);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: border-color var(--animation);
+}
+[type=submit]:hover,
+[type=button]:hover,
+[type=file]::file-selector-button:hover {
+  border-color: var(--main-color-6);
+}
+
+textarea,
+input:not([type=button]):not([type=submit]):not([type=file]) {
+  border: 1px solid var(--main-color-2);
+  border-radius: var(--rounded-basic);
+  transition: border-color var(--animation);
+}
+textarea:hover, textarea:focus,
+input:not([type=button]):not([type=submit]):not([type=file]):hover,
+input:not([type=button]):not([type=submit]):not([type=file]):focus {
+  border-color: var(--main-color-3);
+}
+
 /* ----- リンクカードの装飾 ----- */
 .cardlink {
   display: block;
@@ -230,16 +267,113 @@ a:hover {
   border-top: 1px solid var(--main-color-2);
 }
 
+/* ----- 汎用装飾：文字 ----- */
+/* B:太字(Bold) */
+.decorationB {
+  font-weight: bold;
+}
+
+/* D:削除(Delete) */
+.decorationD {
+  color: var(--main-color-4);
+  text-decoration-line: line-through;
+  text-decoration-color: var(--main-color-6);
+}
+
+/* E:強調(Emphasis) */
+.decorationE {
+  font-style: normal;
+  font-weight: bold;
+  color: var(--deco-e-text-color);
+}
+
+/* I:斜体(Italic) */
+.decorationI {
+  font-style: italic;
+}
+
+/* Q:引用(Quote) */
+.decorationQ {
+  position: relative;
+  display: block;
+  margin: 1em;
+  padding: 0.6em;
+  border: 1px solid var(--main-color-3);
+  border-radius: var(--rounded-basic);
+  font-size: var(--font-size-sm);
+  text-indent: 2em;
+}
+.decorationQ::after {
+  content: "";
+}
+.decorationQ::before {
+  content: "\e244";
+  position: absolute;
+  top: 0.4em;
+  left: -0.8em;
+  color: var(--main-color-3);
+  font-family: var(--font-family-icon);
+  font-size: 2rem;
+}
+.decorationQ + br {
+  display: none;
+}
+
+/* S:小文字(Small) */
+.decorationS {
+  font-size: var(--font-size-sm);
+}
+
+/* T:極小文字(Tiny) */
+.decorationT {
+  font-size: var(--font-size-xs);
+}
+
+/* U:下線(Underline) */
+.decorationU {
+  text-decoration-line: underline;
+}
+
+/* ----- 汎用装飾：画像 ----- */
+/* S:小文字(Small)に含まれる画像に対する装飾 */
+.decorationS .imagelink {
+  width: 100px;
+}
+
+/* T:極小文字(Tiny)に含まれる画像に対する装飾 */
+.decorationT .imagelink {
+  width: 80px;
+}
+
+/* ----- 埋め込み画像 ----- */
+/* 画像ボックス(FIGオプション指定時) */
+.embeddedpictbox {
+  margin: 0;
+  padding: 0;
+  display: inline-table;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+.embeddedpictbox figcaption {
+  width: 100%;
+  background-color: var(--main-color-2);
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+.embeddedpictbox img {
+  vertical-align: middle;
+}
+
 /* 画像リンク */
 .imagelink {
   position: relative;
   display: inline-block;
   aspect-ratio: 1/1;
   width: 120px;
+  vertical-align: middle;
   overflow: hidden;
 }
 .imagelink.nsfw::after {
-  content: "\e000";
   position: absolute;
   top: calc(50% - 20px);
   left: calc(50% - 20px);
@@ -250,6 +384,12 @@ a:hover {
   line-height: 1;
   color: var(--main-color-1);
 }
+.imagelink.nsfw::after {
+  content: "\e000";
+}
+.imagelink.nsfw img {
+  filter: blur(9px);
+}
 
 /* 画像そのもの */
 .embeddedimage {
@@ -258,9 +398,45 @@ a:hover {
   object-fit: cover;
 }
 
-/* フラグ付き画像 */
-img.nsfw {
-  filter: blur(9px);
+/* ----- 埋め込み動画 ----- */
+.embeddedvideo {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.videotitle {
+  min-width: 300px;
+  margin: 8px auto 0;
+  background-color: var(--main-color-2);
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+/* YouTube埋め込み */
+@media all and (max-width: 600px) {
+  .embeddedmovie {
+    display: inline-block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+@media all and (max-width: 300px) {
+  .videotitle {
+    min-width: auto;
+    width: 100%;
+  }
+}
+/* ----- 埋め込みTweet ----- */
+.twitter-tweet {
+  max-width: 350px !important;
+  margin-inline: auto;
+}
+
+/* ----- 検索語のハイライト ----- */
+.searchword {
+  font-weight: 600;
+  background: linear-gradient(transparent 60%, var(--search-word-color) 60%);
 }
 
 /* ============= */
@@ -313,6 +489,7 @@ header {
   color: var(--main-color-6);
   font-weight: 600;
   font-size: var(--font-size-xs);
+  text-decoration: none;
   transition: border-color var(--animation);
 }
 .headcontrol .control-links a:hover {
@@ -329,12 +506,6 @@ header {
 }
 .postarea .line-textarea textarea {
   width: 100%;
-  border: 1px solid var(--main-color-2);
-  border-radius: var(--rounded-basic);
-  transition: border-color var(--animation);
-}
-.postarea .line-textarea textarea:hover, .postarea .line-textarea textarea:focus {
-  border-color: var(--main-color-3);
 }
 .postarea .line-control {
   line-height: 3.4em;
@@ -343,7 +514,6 @@ header {
 .postarea .line-control .postbutton,
 .postarea .line-control [type=button],
 .postarea .line-control [type=file]::file-selector-button {
-  cursor: pointer;
   display: inline-block;
 }
 .postarea .line-control .postbutton,
@@ -368,7 +538,6 @@ header {
   background: var(--main-color-2);
   border: 0;
   border-radius: var(--rounded-pill);
-  color: var(--main-color-6);
   line-height: var(--line-height-basic);
 }
 .postarea .line-control [class*=Btns] [id*=Set],
@@ -380,18 +549,11 @@ header {
   line-height: 1;
   vertical-align: middle;
 }
-.postarea .line-control [class*=Btns] [id*=Set] [type=button],
-.postarea .line-control [class*=Btns] [id*=Set] [type=file]::file-selector-button,
-.postarea .line-control [class*=Btns] [id*=imageBtns] [type=button],
-.postarea .line-control [class*=Btns] [id*=imageBtns] [type=file]::file-selector-button {
-  border: 2px solid var(--main-color-2);
-  border-radius: var(--rounded-basic);
-}
 .postarea .line-control [class*=Btns] [id*=Set] [type=button] + [type=button],
 .postarea .line-control [class*=Btns] [id*=Set] [type=file]::file-selector-button + [type=button],
 .postarea .line-control [class*=Btns] [id*=imageBtns] [type=button] + [type=button],
 .postarea .line-control [class*=Btns] [id*=imageBtns] [type=file]::file-selector-button + [type=button] {
-  margin-inline-start: 2px;
+  margin-inline-start: 4px;
 }
 .postarea .line-control [class*=Btns] [id*=Set] [class*=Checks] + [class*=Checks], .postarea .line-control [class*=Btns] [id*=Set] [class*=Checks] + [type=button],
 .postarea .line-control [class*=Btns] [id*=Set] [type=button] + [class*=Checks],
@@ -404,7 +566,7 @@ header {
 }
 .postarea .line-control [class*=Btns] [id*=Set] [type=button] + [type=button],
 .postarea .line-control [class*=Btns] [id*=imageBtns] [type=button] + [type=button] {
-  margin-inline-start: 2px;
+  margin-inline-start: 4px;
 }
 .postarea .line-control [class*=Btns] [id*=Set] [class*=Checks] label + label,
 .postarea .line-control [class*=Btns] [id*=imageBtns] [class*=Checks] label + label {
@@ -480,6 +642,43 @@ header {
 /* ========================================================= */
 /*   鍵付き(パスワード保護)投稿に表示される鍵入力フォームの装飾   */
 /* ========================================================= */
+.passkeyform {
+  padding: 0.6em;
+  border: 1px solid var(--main-color-2);
+  border-radius: var(--rounded-basic);
+}
+.passkeyform .passkeyguide {
+  font-size: var(--font-size-sm);
+}
+
+/* 鍵違いエラーの表示 */
+.passkeyerror {
+  display: block;
+  margin-bottom: 0.4em;
+  padding: 0.2em 0.4em;
+  background: var(--error-color-1);
+  border: 1px solid var(--error-color-2);
+  border-radius: var(--rounded-basic);
+  font-size: var(--font-size-sm);
+}
+
+/* 入力フォーム枠 */
+.passkeybox {
+  display: block;
+}
+
+/* 入力欄前のガイド文 */
+.passkeyguide {
+  margin-right: 0.1em;
+}
+
+/* 鍵入力欄 */
+.passkeyinput {
+  width: 10em;
+  margin: 0 0.25em 3px 0;
+}
+
+/* 送信ボタン */
 /* ================================================================== */
 /*   一発言だけが表示される際に追加表示されるユーティリティリンク群の装飾   */
 /* ================================================================== */
@@ -572,11 +771,8 @@ header {
 .submitbutton {
   margin-left: 0.6em;
   border: 0;
-  border-radius: var(--rounded-basic);
   background: var(--main-color-6);
   color: var(--main-color-1);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
 }
 
 /* 検索対象を限定するチェックボックス */

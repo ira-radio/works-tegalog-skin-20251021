@@ -1,125 +1,110 @@
-// /* ----- 埋め込み画像 ----- */
-// /* 画像ボックス(FIGオプション指定時) */
-// .embeddedpictbox {
-// 	margin: 0;
-// 	padding: 0;
-// 	display: inline-table;
-// 	border-collapse: collapse; // displayをinline-tableにする場合に必要
-// 	border: 1px solid #e8f4ff;
-// 	vertical-align: top; // 行内では上に寄せる
+/* ----- 埋め込み画像 ----- */
+/* 画像ボックス(FIGオプション指定時) */
+.embeddedpictbox {
+    margin: 0;
+    padding: 0;
+    display: inline-table;
+    border-collapse: collapse;
+    vertical-align: top;
 
-// 	/* キャプション */
-// 	figcaption {
-// 		display: table-caption; // キャプションが画像幅から外に出ないようにする
-// 		caption-side: bottom; // キャプションの位置(上にしたければtop)
-// 		font-size: var(--font-size-xs);
-// 		text-align: center;
-// 		background-color: #e8f4ff;
-// 	}
+    figcaption {
+        width: 100%;
 
-// 	/* 画像ボックスに含まれる画像 */
-// 	img {
-// 		vertical-align: middle;
-// 	}
-// }
+        background-color: var(--main-color-2);
+
+        text-align: center;
+        font-size: var(--font-size-sm);
+    }
+
+    img {
+        vertical-align: middle;
+    }
+}
 
 /* 画像リンク */
 .imagelink {
-	position: relative;
+    position: relative;
 
-	display: inline-block;
-	aspect-ratio: 1/1;
-	width: 120px;
+    display: inline-block;
+    aspect-ratio: 1/1;
+    width: 120px;
 
-	overflow: hidden;
+    vertical-align: middle;
 
-	&.nsfw {
-		&::after {
-			content: '\e000';
-			position: absolute;
-			top: calc(50% - 20px);
-			left: calc(50% - 20px);
-			aspect-ratio: 1/1;
-			width: 40px;
+    overflow: hidden;
 
-			font-family: var(--font-family-icon);
-			font-size: 40px;
-			line-height: 1;
-			color: var(--main-color-1);
-		}
-	}
+    &.nsfw {
+        &::after {
+            position: absolute;
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+            aspect-ratio: 1/1;
+            width: 40px;
+
+            font-family: var(--font-family-icon);
+            font-size: 40px;
+            line-height: 1;
+            color: var(--main-color-1);
+        }
+    }
+
+    &.nsfw {
+        &::after {
+            content: "\e000";
+        }
+
+        img {
+            filter: blur(9px);
+        }
+    }
 }
 
 /* 画像そのもの */
 .embeddedimage {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* フラグ付き画像 */
-figure,
-.imagelink {
-	&.nsfw {
-	}
+/* ----- 埋め込み動画 ----- */
+.embeddedvideo {
+    display: flex;
+    flex-direction: column-reverse;
 }
-img {
-	&.nsfw {
-		filter: blur(9px);
-	}
+.videotitle {
+    min-width: 300px;
+    margin: 8px auto 0;
+
+    background-color: var(--main-color-2);
+
+    text-align: center;
+    font-size: var(--font-size-sm);
 }
 
-// /* ----- 埋め込み動画 ----- */
-// /* [VIDEO:キャプション]URL記法で、キャプション付きで掲載される場合の外側要素 */
-// figure.embeddedvideo {
-// 	margin: 0;
-// 	padding: 0;
-// 	display: flex;
-// 	flex-direction: column-reverse;
-// }
-// /* [VIDEO:キャプション]URL記法で、キャプション付きで掲載される場合のキャプション部分 */
-// .videotitle {
-// 	text-align: center;
-// 	background-color: #d2ecfd;
-// }
+/* YouTube埋め込み */
+@media all and (max-width: 600px) {
+    .embeddedmovie {
+        display: inline-block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+@media all and (max-width: 300px) {
+    .videotitle {
+        min-width: auto;
+        width: 100%;
+    }
+}
 
-// /* [VIDEO]URL記法（または [VIDEO:キャプション]URL記法）で掲載されるvideo要素部分 */
-// video.embeddedvideo {
-// 	display: inline-block;
-// 	max-width: 100%;
-// 	width: auto;
-// 	height: auto;
-// }
+/* ----- 埋め込みTweet ----- */
+.twitter-tweet {
+    max-width: 350px !important;
+    margin-inline: auto;
+}
 
-// /* YouTube埋め込み */
-// @media all and (max-width: 600px) {
-// 	.embeddedmovie {
-// 		display: inline-block;
-// 		max-width: 100%;
-// 		width: auto;
-// 		height: auto;
-// 	}
-// }
-
-// /* ----- 埋め込みTweet ----- */
-// blockquote.twitter-tweet {
-// 	background-color: #f8f8f8;
-// 	border: 1px dashed #ddd;
-// 	border-radius: 9px;
-// 	margin: 0.3em 0;
-// 	padding: 1em;
-// 	font-size: 0.95em;
-// 	color: #999;
-// 	text-shadow: 1px 1px 1px #fff;
-// }
-
-// /* 埋め込みツイートの横幅を強制的に制限 */
-// div.twitter-tweet {
-// 	max-width: 350px !important;
-// }
-
-// /* ----- 検索語のハイライト ----- */
-// .searchword {
-// 	font-weight: bold;
-// 	background: linear-gradient(transparent 60%, #8df 60%);
-// }
+/* ----- 検索語のハイライト ----- */
+.searchword {
+    font-weight: 600;
+    background: linear-gradient(transparent 60%, var(--search-word-color) 60%);
+}

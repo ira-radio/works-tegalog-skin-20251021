@@ -1,36 +1,37 @@
 /* ----- 管理・投稿ボタン区画 ----- */
 .headcontrol {
-	/* 管理・投稿用リンクボタン */
-	.control-links {
-		display: flex;
-		justify-content: end;
-		gap: 0.5em;
+    /* 管理・投稿用リンクボタン */
+    .control-links {
+        display: flex;
+        justify-content: end;
+        gap: 0.5em;
 
-		margin: 0;
-		padding: 0;
+        margin: 0;
+        padding: 0;
 
-		line-height: 1;
+        line-height: 1;
 
-		li {
-			list-style: none;
-		}
+        li {
+            list-style: none;
+        }
 
-		a {
-			overflow: hidden;
-			padding-block: 0.4rem;
-			padding-inline: 0.8rem;
-			border: 2px solid var(--main-color-2);
-			border-radius: var(--rounded-basic);
-			color: var(--main-color-6);
+        a {
+            overflow: hidden;
+            padding-block: 0.4rem;
+            padding-inline: 0.8rem;
+            border: 2px solid var(--main-color-2);
+            border-radius: var(--rounded-basic);
+            color: var(--main-color-6);
 
-			font-weight: 600;
-			font-size: var(--font-size-xs);
+            font-weight: 600;
+            font-size: var(--font-size-xs);
+            text-decoration: none;
 
-			transition: border-color var(--animation);
+            transition: border-color var(--animation);
 
-			&:hover {
-				border-color: var(--main-color-6);
-			}
-		}
-	}
+            &:hover {
+                border-color: var(--main-color-6);
+            }
+        }
+    }
 }

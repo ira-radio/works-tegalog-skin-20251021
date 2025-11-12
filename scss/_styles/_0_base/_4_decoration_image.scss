@@ -1,4 +1,4 @@
-// /* ----- 汎用装飾：画像 ----- */
+/* ----- 汎用装飾：画像 ----- */
 
 // /* B:太字(Bold)に含まれる画像に対する装飾 */
 // .decorationB img {
@@ -25,17 +25,15 @@
 // 	vertical-align: middle;
 // }
 
-// /* S:小文字(Small)に含まれる画像に対する装飾 */
-// .decorationS img {
-// 	vertical-align: middle;
-// }
+/* S:小文字(Small)に含まれる画像に対する装飾 */
+.decorationS .imagelink {
+    width: 100px;
+}
 
-// /* T:極小文字(Tiny)に含まれる画像に対する装飾 */
-// .decorationT img {
-// 	max-height: 75px;
-// 	width: auto;
-// 	vertical-align: middle;
-// }
+/* T:極小文字(Tiny)に含まれる画像に対する装飾 */
+.decorationT .imagelink {
+    width: 80px;
+}
 
 // /* U:下線(Underline)に含まれる画像に対する装飾 */
 // .decorationU img {
